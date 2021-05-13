@@ -19,8 +19,9 @@ export default function Header(props) {
               <Image
                 src="/HTH_logo_rev_sm.png"
                 alt="logo"
-                width={115}
-                height={35}
+                layout="intrinsic"
+                width={230}
+                height={70}
               ></Image>{' '}
             </a>
           </Link>
