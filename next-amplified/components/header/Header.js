@@ -5,7 +5,7 @@ import styles from '../../styles/Header.module.scss';
 export default function Header(props) {
   return (
     <header>
-      <ul>
+      <ul className={styles.headerContent}>
         {!props.isLandingPage && (
           <li>
             <Link href="/">
