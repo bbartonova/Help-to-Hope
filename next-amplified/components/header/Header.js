@@ -6,7 +6,7 @@ export default function Header(props) {
   return (
     <header className={styles.header}>
       <ul>
- {!props.isLandingPage && (
+        {!props.isLandingPage && (
           <li>
             <Link href="/">
               <a>úvod</a>
@@ -19,14 +19,9 @@ export default function Header(props) {
               <Image
                 src="/HTH_logo_rev_sm.png"
                 alt="logo"
-<<<<<<< HEAD
                 layout="intrinsic"
                 width={230}
                 height={70}
-=======
-                width={115}
-                height={35}
->>>>>>> 3ef13fa (pokus o stylování Header)
               ></Image>{' '}
             </a>
           </Link>
