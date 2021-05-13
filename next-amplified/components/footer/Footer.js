@@ -10,20 +10,20 @@ export default function Footer(props) {
           <Link href="/o_projektu">
             <a>o projektu</a>
           </Link>
-          <Link href="/">
+          <Link href="/gdpr">
             <a>GDPR</a>
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/reference">
             <a>reference</a>
           </Link>
-          <Link href="/">
+          <Link href="/archiv">
             <a>archiv</a>
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/kontakty">
             <a>kontakty</a>
           </Link>
         </li>
