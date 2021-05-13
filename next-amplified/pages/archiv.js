@@ -1,9 +1,13 @@
 import Head from 'next/head';
 import Layout from '../components/layout/Layout';
+<<<<<<< HEAD
 
 import InterestedInHelper from '../components/forms/InterestedInHelper';
 import styles from '../styles/Page.module.scss';
 
+=======
+import styles from '../styles/Page.module.scss';
+>>>>>>> 3ef13fa (pokus o stylování Header)
 
 export default function PageArchiv() {
   return (
