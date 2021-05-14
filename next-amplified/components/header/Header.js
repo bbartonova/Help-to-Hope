@@ -4,9 +4,9 @@ import styles from '../../styles/Header.module.scss';
 
 export default function Header(props) {
   return (
-    <header>
-      <ul className={styles.headerContent}>
-        {!props.isLandingPage && (
+    <header className={styles.header}>
+      <ul>
+ {!props.isLandingPage && (
           <li>
             <Link href="/">
               <a>úvod</a>
@@ -15,7 +15,15 @@ export default function Header(props) {
         )}
         <li>
           <Link href="/">
-            <a>LOGO</a>
+            <a>
+              <Image
+                src="/HTH_logo_rev_sm.png"
+                alt="logo"
+                layout="intrinsic"
+                width={230}
+                height={70}
+              ></Image>{' '}
+            </a>
           </Link>
         </li>
         {!props.isLandingPage && (

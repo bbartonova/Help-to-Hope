@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import Layout from '../components/layout/Layout';
-import styles from '../styles/Archiv.module.scss';
+import styles from '../styles/Page.module.scss';
 import HelperOfProject from '../components/forms/HelperOfProject';
+
 
 export default function PageArchiv() {
   return (
