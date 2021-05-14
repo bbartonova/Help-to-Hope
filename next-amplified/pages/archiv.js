@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import Layout from '../components/layout/Layout';
+
+import InterestedInHelper from '../components/forms/InterestedInHelper';
 import styles from '../styles/Page.module.scss';
-import HelperOfProject from '../components/forms/HelperOfProject';
 
 
 export default function PageArchiv() {
@@ -14,7 +15,7 @@ export default function PageArchiv() {
       <Layout isLandingPage={false}>
         <main className={styles.main}>
           <p>Archiv projektů</p>
-          <HelperOfProject></HelperOfProject>
+          <InterestedInHelper/>
         </main>
       </Layout>
     </>
