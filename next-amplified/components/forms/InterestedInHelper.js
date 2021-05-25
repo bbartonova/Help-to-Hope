@@ -5,6 +5,7 @@ import { Form, Input, Button } from 'antd';
 
 export default function InterestedInHelper() {
   const { TextArea } = Input;
+  const [componentSize, setComponentSize] = useState();
   const onFormLayoutChange = ({ size }) => {
     setComponentSize(size);
   };

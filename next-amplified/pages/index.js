@@ -16,7 +16,7 @@ export default function Home() {
           <LandingArticle
             title="Potřebuji pomoc"
             text="Poskytujete nezištně pomoc - naději ostatním? Potřebuje vaše naděje být více vidět v online světě?"
-            link="/"
+            link="/projects"
             align="left"
           />
           <Image
@@ -28,7 +28,7 @@ export default function Home() {
           <LandingArticle
             title="Nabízím pomoc"
             text="Chcete pomoci nějaké naději být více vidět v online světě? Pohybujete se v online světě?"
-            link="/"
+            link="/helper"
             align="right"
           />
         </main>

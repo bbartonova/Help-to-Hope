@@ -5,6 +5,7 @@ import { Form, Input, Button, Select } from 'antd';
 
 export default function NewProject() {
   const { TextArea } = Input;
+  const [componentSize, setComponentSize] = useState();
   const onFormLayoutChange = ({ size }) => {
     setComponentSize(size);
   };

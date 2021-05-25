@@ -6,7 +6,7 @@ export default function Header(props) {
   return (
     <header className={styles.header}>
       <ul>
- {!props.isLandingPage && (
+        {!props.isLandingPage && (
           <li>
             <Link href="/">
               <a>úvod</a>
