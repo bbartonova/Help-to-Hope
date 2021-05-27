@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { AppProvider } from '../libs/appContext';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
@@ -8,7 +9,9 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favi.ico" />
       </Head>
-      <Component {...pageProps} />
+      <AppProvider>
+        <Component {...pageProps} />
+      </AppProvider>
     </>
   );
 }

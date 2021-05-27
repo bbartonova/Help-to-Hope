@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^1.1.0",
+    "ahooks": "^2.10.4",
     "antd": "^4.15.5",
     "aws-amplify": "^4.0.0",
     "next": "10.2.0",

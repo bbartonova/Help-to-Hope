@@ -49,25 +49,27 @@ export default function NewProject() {
         <Form.Item
           label="Popis vaší činnosti"
           name="eactivityDescription"
-          rules={[{ required: true, message: 'Popište, co děláte.' }]}
+          rules={[
+            {
+              required: true,
+              message: 'Popište, co děláte a komu tím pomáháte.',
+            },
+          ]}
         >
           <TextArea rows={4} placeholder="Popis vaší činnosti." />
         </Form.Item>
         <Form.Item
-          label="Účel projektu"
+          label="Popis projektu"
           name="projectPurpose"
           rules={[
             {
               required: true,
               message:
-                'Popište, prosíme, komu váš projekt má pomoci nebo již pomáhá.',
+                'Popište, prosíme, s čím potřebujete pomoct (např. nový web apod.).',
             },
           ]}
         >
-          <TextArea
-            rows={4}
-            placeholder="Popište, komu váš projekt má pomoci."
-          />
+          <TextArea rows={4} placeholder="Popište, s čím potřebujete pomoci." />
         </Form.Item>
 
         <Form.Item

@@ -2,6 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../components/layout/Layout';
 import styles from '../styles/Page.module.scss';
+import Helper from '../components/helper/Helper';
+import helper_vzor from '../data/helper_vzor.json';
 
 export default function Projects() {
   return (
@@ -14,11 +16,19 @@ export default function Projects() {
         <main className={styles.main}>
           <p>Hlavní stránka pro ty, kdo hledají pomoc</p>
           <p>Seznam dostupných pomocníků</p>
-          <ul>
-            <li>Komponenta pomocník</li>
-            <li>Komponenta pomocník</li>
-            <li>Komponenta pomocník</li>
-          </ul>
+          {helper_vzor.map((helper) => (
+            <Helper
+              key={helper.id}
+              name={helper.name}
+              lastname={helper.lastname}
+              businessField={helper.businessField}
+              activityDescription={helper.activityDescription}
+              links={helper.links}
+              reference={helper.reference}
+              timeAvailability={helper.timeAvailability}
+              projectArea={helper.projectArea}
+            ></Helper>
+          ))}
           <p>
             <Link href="/new_project">
               <a>Odkaz na formulář</a>
