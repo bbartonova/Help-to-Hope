@@ -1,5 +1,29 @@
-type Todo @model {
+type HelperOfProject @model {
   id: ID!
   name: String!
-  description: String
+  lastname: String
+  email: String
+  phonenumber: String
+  links: String
+  businessField: String
+  activityDescription: String
+  reference: String
+  timeAvailability: String
+  projectArea: String
+}
+
+type NewProject @model {
+  id: ID!
+  name: String!
+  eactivityDescription: String
+  projectPurpose: String
+  fullname: String
+  organization: String
+  phonenumber: String
+  email: String
+  oldWeb: String
+  links: String
+  businessField: String
+  experiences: String
+  reward: String
 }
