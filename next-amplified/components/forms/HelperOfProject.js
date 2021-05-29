@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import 'antd/dist/antd.css';
+import Amplify, { API, graphqlOperation } from 'aws-amplify';
+import { createHelperOfProject } from '../../src/graphql/mutations';
 
 import { Form, Input, Button, Select } from 'antd';
 
@@ -9,8 +11,15 @@ export default function HelperOfProject() {
   const onFormLayoutChange = ({ size }) => {
     setComponentSize(size);
   };
-  const onFinish = (values) => {
+  const onFinish = async (values) => {
     console.log('Success:', values);
+    try {
+      await API.graphql(
+        graphqlOperation(createHelperOfProject, { input: values }),
+      );
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const onFinishFailed = (errorInfo) => {
