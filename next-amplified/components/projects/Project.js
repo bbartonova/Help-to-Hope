@@ -1,10 +1,11 @@
 import Link from 'next/link';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { AppContext } from '../../libs/appContext';
 import styles from '../../styles/Project.module.scss';
 
 export default function Project(props) {
   const [isVisible, setIsVisible] = useState(false);
+
   const { setNameProjectLS } = useContext(AppContext);
 
   return (

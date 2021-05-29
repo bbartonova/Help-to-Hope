@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-helptohope-dev-94257-authRole",
+      "UnauthRoleArn": "arn:aws:iam::903048384906:role/amplify-helptohope-dev-94257-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::903048384906:role/amplify-helptohope-dev-94257-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-helptohope-dev-94257-deployment",
+      "UnauthRoleName": "amplify-helptohope-dev-94257-unauthRole",
+      "StackName": "amplify-helptohope-dev-94257",
+      "StackId": "arn:aws:cloudformation:eu-central-1:903048384906:stack/amplify-helptohope-dev-94257/940b61f0-c051-11eb-a6f5-0afe841876c0",
+      "AmplifyAppId": "d25p9kpwtyoaoq"
+    }
+  }
+}
