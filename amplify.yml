@@ -3,6 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
+        - pwd
         - cd ${BUILD_FOLDER}/next-amplified
         - npm ci
     build:
