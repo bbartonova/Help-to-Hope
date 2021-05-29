@@ -1,43 +1,139 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createTodo = /* GraphQL */ `
-  mutation CreateTodo(
-    $input: CreateTodoInput!
-    $condition: ModelTodoConditionInput
+export const createHelperOfProject = /* GraphQL */ `
+  mutation CreateHelperOfProject(
+    $input: CreateHelperOfProjectInput!
+    $condition: ModelHelperOfProjectConditionInput
   ) {
-    createTodo(input: $input, condition: $condition) {
+    createHelperOfProject(input: $input, condition: $condition) {
       id
       name
-      description
+      lastname
+      email
+      phonenumber
+      links
+      businessField
+      activityDescription
+      reference
+      timeAvailability
+      projectArea
       createdAt
       updatedAt
     }
   }
 `;
-export const updateTodo = /* GraphQL */ `
-  mutation UpdateTodo(
-    $input: UpdateTodoInput!
-    $condition: ModelTodoConditionInput
+export const updateHelperOfProject = /* GraphQL */ `
+  mutation UpdateHelperOfProject(
+    $input: UpdateHelperOfProjectInput!
+    $condition: ModelHelperOfProjectConditionInput
   ) {
-    updateTodo(input: $input, condition: $condition) {
+    updateHelperOfProject(input: $input, condition: $condition) {
       id
       name
-      description
+      lastname
+      email
+      phonenumber
+      links
+      businessField
+      activityDescription
+      reference
+      timeAvailability
+      projectArea
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteTodo = /* GraphQL */ `
-  mutation DeleteTodo(
-    $input: DeleteTodoInput!
-    $condition: ModelTodoConditionInput
+export const deleteHelperOfProject = /* GraphQL */ `
+  mutation DeleteHelperOfProject(
+    $input: DeleteHelperOfProjectInput!
+    $condition: ModelHelperOfProjectConditionInput
   ) {
-    deleteTodo(input: $input, condition: $condition) {
+    deleteHelperOfProject(input: $input, condition: $condition) {
       id
       name
-      description
+      lastname
+      email
+      phonenumber
+      links
+      businessField
+      activityDescription
+      reference
+      timeAvailability
+      projectArea
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createNewProject = /* GraphQL */ `
+  mutation CreateNewProject(
+    $input: CreateNewProjectInput!
+    $condition: ModelNewProjectConditionInput
+  ) {
+    createNewProject(input: $input, condition: $condition) {
+      id
+      name
+      eactivityDescription
+      projectPurpose
+      fullname
+      organization
+      phonenumber
+      email
+      oldWeb
+      links
+      businessField
+      experiences
+      reward
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateNewProject = /* GraphQL */ `
+  mutation UpdateNewProject(
+    $input: UpdateNewProjectInput!
+    $condition: ModelNewProjectConditionInput
+  ) {
+    updateNewProject(input: $input, condition: $condition) {
+      id
+      name
+      eactivityDescription
+      projectPurpose
+      fullname
+      organization
+      phonenumber
+      email
+      oldWeb
+      links
+      businessField
+      experiences
+      reward
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteNewProject = /* GraphQL */ `
+  mutation DeleteNewProject(
+    $input: DeleteNewProjectInput!
+    $condition: ModelNewProjectConditionInput
+  ) {
+    deleteNewProject(input: $input, condition: $condition) {
+      id
+      name
+      eactivityDescription
+      projectPurpose
+      fullname
+      organization
+      phonenumber
+      email
+      oldWeb
+      links
+      businessField
+      experiences
+      reward
       createdAt
       updatedAt
     }
