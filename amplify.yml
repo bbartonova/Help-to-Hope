@@ -4,7 +4,7 @@ frontend:
     preBuild:
       commands:
         - ls
-        - cd ${BUILD_FOLDER}/next-amplified
+        - cd next-amplified
         - npm ci
     build:
       commands:
