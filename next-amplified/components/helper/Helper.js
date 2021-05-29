@@ -27,7 +27,7 @@ export default function Helper(props) {
           ? `Skrýt informace o pomocníku`
           : `Další informace o pomocníku`}
       </button>
-      <Link href="/int_helper">
+      <Link href={`/int_helper/${props.id}`}>
         <a onClick={() => setNameProjectLS(props.name + ' ' + props.lastname)}>
           Chci pomoct od pomocníka
         </a>

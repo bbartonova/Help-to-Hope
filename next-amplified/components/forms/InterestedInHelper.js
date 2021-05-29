@@ -3,7 +3,9 @@ import 'antd/dist/antd.css';
 
 import { Form, Input, Button } from 'antd';
 
-export default function InterestedInHelper() {
+import axios from 'axios';
+
+export default function InterestedInHelper(props) {
   const { TextArea } = Input;
   const [componentSize, setComponentSize] = useState();
   const onFormLayoutChange = ({ size }) => {
@@ -11,6 +13,9 @@ export default function InterestedInHelper() {
   };
   const onFinish = (values) => {
     console.log('Success:', values);
+    axios
+      .post('/api/mailer', { ...values, helperId: props.id })
+      .then((response) => console.log(response));
   };
 
   const onFinishFailed = (errorInfo) => {

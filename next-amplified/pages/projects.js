@@ -1,11 +1,22 @@
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../components/layout/Layout';
 import styles from '../styles/Page.module.scss';
 import Helper from '../components/helper/Helper';
 import helper_vzor from '../data/helper_vzor.json';
+import Amplify, { API, graphqlOperation } from 'aws-amplify';
+import { listHelperOfProjects } from '../src/graphql/queries';
 
 export default function Projects() {
+  const [helpers, setHelpers] = useState([]);
+  useEffect(() => {
+    API.graphql(graphqlOperation(listHelperOfProjects)).then((response) => {
+      console.log(response);
+      setHelpers(response.data.listHelperOfProjects.items);
+    });
+  }, []);
+
   return (
     <>
       <Head>
@@ -16,9 +27,10 @@ export default function Projects() {
         <main className={styles.main}>
           <p>Hlavní stránka pro ty, kdo hledají pomoc</p>
           <p>Seznam dostupných pomocníků</p>
-          {helper_vzor.map((helper) => (
+          {helpers.map((helper) => (
             <Helper
               key={helper.id}
+              id={helper.id}
               name={helper.name}
               lastname={helper.lastname}
               businessField={helper.businessField}

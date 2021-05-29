@@ -6,16 +6,14 @@ import styles from '../styles/Page.module.scss';
 import Project from '../components/projects/Project';
 import project_vzor from '../data/project_vzor.json';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
-import awsconfig from '../src/aws-exports';
 import { listNewProjects } from '../src/graphql/queries';
-Amplify.configure(awsconfig);
 
 export default function Helper() {
-  const [project, setProject] = useState([]);
+  const [projects, setProjects] = useState([]);
   useEffect(() => {
     API.graphql(graphqlOperation(listNewProjects)).then((response) => {
       console.log(response);
-      setProject(response.data.listNewProjects.items);
+      setProjects(response.data.listNewProjects.items);
     });
   }, []);
   return (
@@ -28,7 +26,7 @@ export default function Helper() {
         <main className={styles.main}>
           <p>Hlavní stránka pro ty, kdo chtějí pomáhat</p>
           <p>Seznam dostupných projektů, které potřebují pomoct</p>
-          {project.map((project) => (
+          {projects.map((project) => (
             <Project
               key={project.id}
               businessField={project.businessField}
