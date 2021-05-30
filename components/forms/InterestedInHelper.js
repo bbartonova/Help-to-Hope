@@ -22,6 +22,7 @@ export default function InterestedInHelper(props) {
         ...values,
         helperId: props.id,
         contactId: 'Zájem o pomocníka',
+        helperName: `${props.name} ${props.lastname}`,
       })
 
       .then((response) => console.log(response));

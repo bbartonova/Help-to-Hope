@@ -8,7 +8,9 @@ export default (req, res) => {
     const msg = {
       to: 'helptohope.info@gmail.com', // Change to your recipient
       from: 'helptohope.info@gmail.com', // Change to your verified sender
-      subject: `${req.body.contactId}`,
+      subject: `${req.body.contactId}: ${
+        req.body.projectName || req.body.helperName
+      }`,
       text: `${JSON.stringify(req.body)}`,
       html: `${JSON.stringify(req.body)}`,
     };

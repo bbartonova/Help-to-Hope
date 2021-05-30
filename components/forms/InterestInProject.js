@@ -21,6 +21,7 @@ export default function InterestInProject(props) {
         ...values,
         projectId: props.id,
         contactId: 'Zájem o projekt',
+        projectName: props.name,
       })
 
       .then((response) => console.log(response));
