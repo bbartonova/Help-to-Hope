@@ -3,21 +3,23 @@ import nodemailer from 'nodemailer';
 
 export default (req, res) => {
   if (req.method === 'POST') {
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.MAILER_USER,
-        pass: process.env.MAILER_PASSWORD,
-      },
-    });
-    const mailData = {
-      from: process.env.MAILER_USER,
-      to: process.env.MAILER_USER,
-      subject: `Message From ${req.body.name}`,
-      text: req.body.name,
-      html: <div>{req.body.name}</div>,
+    const sgMail = require('@sendgrid/mail');
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    const msg = {
+      to: 'helptohope.info@gmail.com', // Change to your recipient
+      from: 'helptohope.info@gmail.com', // Change to your verified sender
+      subject: `${req.body.contactId}`,
+      text: `${JSON.stringify(req.body)}`,
+      html: `${JSON.stringify(req.body)}`,
     };
-    transporter.sendMail(mailData).catch(console.error);
+    sgMail
+      .send(msg)
+      .then(() => {
+        console.log('Email sent');
+      })
+      .catch((error) => {
+        console.error(error);
+      });
     return res.status(200).json(req.body);
   }
 

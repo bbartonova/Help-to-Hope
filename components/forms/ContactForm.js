@@ -1,16 +1,25 @@
 import { useState } from 'react';
 import 'antd/dist/antd.css';
+import { useRouter } from 'next/router';
 
 import { Form, Input, Button } from 'antd';
+import axios from 'axios';
 
 export default function ContactForm() {
   const { TextArea } = Input;
   const [componentSize, setComponentSize] = useState();
+  const [isSent, setIsSent] = useState(false);
+  const router = useRouter();
+  const [form] = Form.useForm();
+
   const onFormLayoutChange = ({ size }) => {
     setComponentSize(size);
   };
   const onFinish = (values) => {
     console.log('Success:', values);
+    axios
+      .post('/api/mailer', { ...values, contactId: 'Kontaktní formulář' })
+      .then((response) => console.log(response));
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -20,6 +29,7 @@ export default function ContactForm() {
   return (
     <>
       <Form
+        form={form}
         name="ContactForm"
         labelCol={{
           span: 4,
@@ -63,8 +73,16 @@ export default function ContactForm() {
         </Form.Item>
 
         <Form.Item name="submit" type="button">
-          <Button type="primary" htmlType="submit">
-            Odeslat
+          <Button
+            type="primary"
+            htmlType="submit"
+            onClick={() => {
+              setIsSent(!isSent);
+              form.resetFields();
+              router.push('/successSent');
+            }}
+          >
+            {isSent === true ? `Odesláno` : `Odeslat`}
           </Button>
         </Form.Item>
       </Form>

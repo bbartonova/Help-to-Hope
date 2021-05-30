@@ -2,12 +2,17 @@ import { useState } from 'react';
 import 'antd/dist/antd.css';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import { createHelperOfProject } from '../../src/graphql/mutations';
+import { useRouter } from 'next/router';
 
 import { Form, Input, Button, Select } from 'antd';
 
 export default function HelperOfProject() {
   const { TextArea } = Input;
   const [componentSize, setComponentSize] = useState();
+  const [isSent, setIsSent] = useState(false);
+  const router = useRouter();
+  const [form] = Form.useForm();
+
   const onFormLayoutChange = ({ size }) => {
     setComponentSize(size);
   };
@@ -127,8 +132,16 @@ export default function HelperOfProject() {
         </Form.Item>
 
         <Form.Item name="submit" type="button">
-          <Button type="primary" htmlType="submit">
-            Odeslat
+          <Button
+            type="primary"
+            htmlType="submit"
+            onClick={() => {
+              setIsSent(!isSent);
+              form.resetFields();
+              router.push('/successAdd');
+            }}
+          >
+            {isSent === true ? `Přidáno` : `Přidat`}
           </Button>
         </Form.Item>
       </Form>

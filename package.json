@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^1.1.0",
+    "@sendgrid/mail": "^7.4.4",
     "ahooks": "^2.10.4",
     "antd": "^4.15.5",
     "aws-amplify": "^4.0.0",

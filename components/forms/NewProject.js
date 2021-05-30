@@ -4,12 +4,17 @@ import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import awsconfig from '../../src/aws-exports';
 import { createNewProject } from '../../src/graphql/mutations';
 Amplify.configure(awsconfig);
+import { useRouter } from 'next/router';
 
 import { Form, Input, Button, Select } from 'antd';
 
 export default function NewProject() {
   const { TextArea } = Input;
   const [componentSize, setComponentSize] = useState();
+  const [isSent, setIsSent] = useState(false);
+  const router = useRouter();
+  const [form] = Form.useForm();
+
   const onFormLayoutChange = ({ size }) => {
     setComponentSize(size);
   };
@@ -157,8 +162,16 @@ export default function NewProject() {
         </Form.Item>
 
         <Form.Item name="submit" type="button">
-          <Button type="primary" htmlType="submit">
-            Odeslat
+          <Button
+            type="primary"
+            htmlType="submit"
+            onClick={() => {
+              setIsSent(!isSent);
+              form.resetFields();
+              router.push('/successAdd');
+            }}
+          >
+            {isSent === true ? `Přidáno` : `Přidat`}
           </Button>
         </Form.Item>
       </Form>
