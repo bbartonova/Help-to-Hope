@@ -31,7 +31,7 @@ export default function Project(props) {
           ? `Skrýt informace o projektu`
           : `Další informace o projektu`}
       </button>
-      <Link href="/int_project">
+      <Link href={`/int_project/${props.id}`}>
         <a onClick={() => setNameProjectLS(props.name)}>Chci pomoct projektu</a>
       </Link>
     </div>

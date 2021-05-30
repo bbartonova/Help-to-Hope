@@ -7,15 +7,39 @@ import Helper from '../components/helper/Helper';
 import helper_vzor from '../data/helper_vzor.json';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import { listHelperOfProjects } from '../src/graphql/queries';
+import 'antd/dist/antd.css';
+import { Select } from 'antd';
 
 export default function Projects() {
   const [helpers, setHelpers] = useState([]);
+  const [categories, setCategories] = useState([]);
+
   useEffect(() => {
     API.graphql(graphqlOperation(listHelperOfProjects)).then((response) => {
       console.log(response);
       setHelpers(response.data.listHelperOfProjects.items);
+
+      setCategories([
+        ...new Set([
+          ...response.data.listHelperOfProjects.items.map(
+            (project) => project.businessField,
+          ),
+        ]),
+      ]);
     });
   }, []);
+
+  const onFilterChange = (value) => {
+    API.graphql(
+      graphqlOperation(listHelperOfProjects, {
+        filter: {
+          businessField: { contains: value },
+        },
+      }),
+    ).then((response) => {
+      setHelpers(response.data.listHelperOfProjects.items);
+    });
+  };
 
   return (
     <>
@@ -27,6 +51,15 @@ export default function Projects() {
         <main className={styles.main}>
           <p>Hlavní stránka pro ty, kdo hledají pomoc</p>
           <p>Seznam dostupných pomocníků</p>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Select onChange={onFilterChange} placeholder="Vyberte oblast:">
+              {categories.map((category) => (
+                <Select.Option value={category} key={category}>
+                  {category}
+                </Select.Option>
+              ))}
+            </Select>
+          </div>
           {helpers.map((helper) => (
             <Helper
               key={helper.id}

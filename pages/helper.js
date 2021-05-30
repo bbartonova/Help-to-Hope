@@ -7,15 +7,38 @@ import Project from '../components/projects/Project';
 import project_vzor from '../data/project_vzor.json';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import { listNewProjects } from '../src/graphql/queries';
+import 'antd/dist/antd.css';
+import { Select } from 'antd';
 
 export default function Helper() {
   const [projects, setProjects] = useState([]);
+  const [categories, setCategories] = useState([]);
   useEffect(() => {
     API.graphql(graphqlOperation(listNewProjects)).then((response) => {
       console.log(response);
       setProjects(response.data.listNewProjects.items);
+
+      setCategories([
+        ...new Set([
+          ...response.data.listNewProjects.items.map(
+            (project) => project.businessField,
+          ),
+        ]),
+      ]);
     });
   }, []);
+  const onFilterChange = (value) => {
+    API.graphql(
+      graphqlOperation(listNewProjects, {
+        filter: {
+          businessField: { contains: value },
+        },
+      }),
+    ).then((response) => {
+      setProjects(response.data.listNewProjects.items);
+    });
+  };
+
   return (
     <>
       <Head>
@@ -26,9 +49,19 @@ export default function Helper() {
         <main className={styles.main}>
           <p>Hlavní stránka pro ty, kdo chtějí pomáhat</p>
           <p>Seznam dostupných projektů, které potřebují pomoct</p>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Select onChange={onFilterChange} placeholder="Vyberte oblast:">
+              {categories.map((category) => (
+                <Select.Option value={category} key={category}>
+                  {category}
+                </Select.Option>
+              ))}
+            </Select>
+          </div>
           {projects.map((project) => (
             <Project
               key={project.id}
+              id={project.id}
               businessField={project.businessField}
               name={project.name}
               eactivityDescription={project.eactivityDescription}
