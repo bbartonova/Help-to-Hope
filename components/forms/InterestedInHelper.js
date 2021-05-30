@@ -26,6 +26,7 @@ export default function InterestedInHelper(props) {
       })
 
       .then((response) => console.log(response));
+    form.resetFields();
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -35,6 +36,7 @@ export default function InterestedInHelper(props) {
   return (
     <>
       <Form
+        form={form}
         name="InterestedInHelper"
         labelCol={{
           span: 4,
@@ -147,7 +149,6 @@ export default function InterestedInHelper(props) {
             htmlType="submit"
             onClick={() => {
               setIsSent(!isSent);
-              form.resetFields();
               router.push('/successSent');
             }}
           >

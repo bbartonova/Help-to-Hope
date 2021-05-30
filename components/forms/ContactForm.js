@@ -20,6 +20,7 @@ export default function ContactForm() {
     axios
       .post('/api/mailer', { ...values, contactId: 'Kontaktní formulář' })
       .then((response) => console.log(response));
+    form.resetFields();
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -78,7 +79,6 @@ export default function ContactForm() {
             htmlType="submit"
             onClick={() => {
               setIsSent(!isSent);
-              form.resetFields();
               router.push('/successSent');
             }}
           >

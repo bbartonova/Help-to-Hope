@@ -23,6 +23,7 @@ export default function NewProject() {
     } catch (error) {
       console.log(error);
     }
+    form.resetFields();
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -32,6 +33,7 @@ export default function NewProject() {
   return (
     <>
       <Form
+        form={form}
         name="NewProject"
         labelCol={{
           span: 4,
@@ -165,7 +167,6 @@ export default function NewProject() {
             htmlType="submit"
             onClick={() => {
               setIsSent(!isSent);
-              form.resetFields();
               router.push('/successAdd');
             }}
           >

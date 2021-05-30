@@ -25,6 +25,7 @@ export default function InterestInProject(props) {
       })
 
       .then((response) => console.log(response));
+    form.resetFields();
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -34,6 +35,7 @@ export default function InterestInProject(props) {
   return (
     <>
       <Form
+        form={form}
         name="InterestInProject"
         labelCol={{
           span: 4,
@@ -127,7 +129,6 @@ export default function InterestInProject(props) {
             htmlType="submit"
             onClick={() => {
               setIsSent(!isSent);
-              form.resetFields();
               router.push('/successSent');
             }}
           >

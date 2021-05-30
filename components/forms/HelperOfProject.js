@@ -25,6 +25,7 @@ export default function HelperOfProject() {
     } catch (error) {
       console.log(error);
     }
+    form.resetFields();
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -34,6 +35,7 @@ export default function HelperOfProject() {
   return (
     <>
       <Form
+        form={form}
         name="HelperOfProject"
         labelCol={{
           span: 4,
@@ -137,7 +139,6 @@ export default function HelperOfProject() {
             htmlType="submit"
             onClick={() => {
               setIsSent(!isSent);
-              form.resetFields();
               router.push('/successAdd');
             }}
           >
