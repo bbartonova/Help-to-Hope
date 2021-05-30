@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import 'antd/dist/antd.css';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import { createNewProject } from '../../src/graphql/mutations';
 import { useRouter } from 'next/router';

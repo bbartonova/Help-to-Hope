@@ -7,7 +7,6 @@ import Project from '../components/projects/Project';
 import project_vzor from '../data/project_vzor.json';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import { listNewProjects } from '../src/graphql/queries';
-import 'antd/dist/antd.css';
 import { Select } from 'antd';
 
 export default function Helper() {
@@ -49,7 +48,7 @@ export default function Helper() {
         <main className={styles.main}>
           <p>Hlavní stránka pro ty, kdo chtějí pomáhat</p>
           <p>Seznam dostupných projektů, které potřebují pomoct</p>
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div className="flex justify-center">
             <Select onChange={onFilterChange} placeholder="Vyberte oblast:">
               {categories.map((category) => (
                 <Select.Option value={category} key={category}>

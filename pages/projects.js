@@ -7,7 +7,6 @@ import Helper from '../components/helper/Helper';
 import helper_vzor from '../data/helper_vzor.json';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import { listHelperOfProjects } from '../src/graphql/queries';
-import 'antd/dist/antd.css';
 import { Select } from 'antd';
 
 export default function Projects() {
