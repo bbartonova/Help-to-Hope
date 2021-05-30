@@ -17,7 +17,7 @@ export default function Header(props) {
           <Link href="/">
             <a>
               <Image
-                src="/HTH_logo_rev_sm.png"
+                src="/HtH_logo_rev_sm.png"
                 alt="logo"
                 layout="intrinsic"
                 width={230}
