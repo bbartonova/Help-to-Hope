@@ -22,7 +22,7 @@ export default function Header(props) {
                 layout="intrinsic"
                 width={230}
                 height={70}
-              ></Image>
+              ></Image>{' '}
             </a>
           </Link>
         </li>
