@@ -14,11 +14,13 @@ export default function ContactForm() {
   const onFormLayoutChange = ({ size }) => {
     setComponentSize(size);
   };
-  const onFinish = (values) => {
+  const onFinish = async (values) => {
     console.log('Success:', values);
-    axios
-      .post('/api/mailer', { ...values, contactId: 'Kontaktní formulář' })
-      .then((response) => console.log(response));
+    await axios.post('/api/mailer', {
+      ...values,
+      contactId: 'Kontaktní formulář',
+    });
+
     form.resetFields();
   };
 
