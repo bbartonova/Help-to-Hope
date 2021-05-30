@@ -1,6 +1,6 @@
 import sgMail from '@sendgrid/mail';
 
-export default (req, res) => {
+export default async (req, res) => {
   if (req.method === 'POST') {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const msg = {
@@ -12,16 +12,12 @@ export default (req, res) => {
       text: `${JSON.stringify(req.body)}`,
       html: `${JSON.stringify(req.body)}`,
     };
-    sgMail
-      .send(msg)
-      .then(() => {
-        console.log('Email sent');
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    try {
+      await sgMail.send(msg);
+      return res.status(200).json(req.body);
+    } catch (err) {
+      console.log('Error sending data to sendgrid');
+    }
     return res.status(200).json(req.body);
   }
-
-  res.status(200).json({ name: 'John Doe' });
 };
