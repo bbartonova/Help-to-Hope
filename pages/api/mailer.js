@@ -1,9 +1,7 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import nodemailer from 'nodemailer';
+import sgMail from '@sendgrid/mail';
 
 export default (req, res) => {
   if (req.method === 'POST') {
-    const sgMail = require('@sendgrid/mail');
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const msg = {
       to: 'helptohope.info@gmail.com', // Change to your recipient
