@@ -4,7 +4,15 @@ import '../styles/globals.css';
 import Amplify from 'aws-amplify';
 import awsconfig from '../src/aws-exports';
 
-Amplify.configure(awsconfig);
+Amplify.configure({
+  aws_project_region: process.env.NEXT_PUBLIC_aws_project_region,
+  aws_appsync_graphqlEndpoint:
+    process.env.NEXT_PUBLIC_aws_appsync_graphqlEndpoint,
+  aws_appsync_region: process.env.NEXT_PUBLIC_aws_appsync_region,
+  aws_appsync_authenticationType:
+    process.env.NEXT_PUBLIC_aws_appsync_authenticationType,
+  aws_appsync_apiKey: process.env.NEXT_PUBLIC_aws_appsync_apiKey,
+});
 
 function MyApp({ Component, pageProps }) {
   return (
