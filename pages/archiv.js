@@ -14,7 +14,12 @@ export default function PageArchiv() {
       <Layout isLandingPage={false}>
         <main className={styles.main}>
           <p>Archiv projektů</p>
-          <InterestedInHelper />
+          <div className="bg-hero-pattern">
+            <p>Archiv projektů</p>
+            <p>Archiv projektů</p>
+            <p>Archiv projektů</p>
+            <p>Archiv projektů</p>
+          </div>
         </main>
       </Layout>
     </>

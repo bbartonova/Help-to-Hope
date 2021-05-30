@@ -5,7 +5,12 @@ import Footer from '../footer/Footer';
 
 export default function Layout(props) {
   return (
-    <div className={styles.container}>
+    <div
+      className={`${
+        props.isLandingPage &&
+        'bg-index-background bg-no-repeat bg-cover h-screen flex flex-col'
+      }`}
+    >
       <Header isLandingPage={props.isLandingPage} />
       {props.children}
       <Footer />

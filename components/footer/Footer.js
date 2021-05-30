@@ -4,30 +4,37 @@ import Header from '../header/Header';
 
 export default function Footer(props) {
   return (
-    <footer className={styles.footer}>
-      <ul>
-        <li>
+    <footer className="bg-grey-dark px-8 flex justify-between">
+      <div className="flex flex-row justify-between h-14 content-center w-full">
+        <div className="text-2xl mx-4 flex content-center">
           <Link href="/o_projektu">
-            <a>o projektu</a>
+            <a className="text-grey-light font-title flex items-center hover:text-green-dark">
+              O projektu
+            </a>
           </Link>
+        </div>
+        <div className="text-2xl mx-4 flex content-center">
           <Link href="/gdpr">
-            <a>GDPR</a>
+            <a className="text-grey-light font-title flex items-center hover:text-green-dark">
+              Soukromí a cookies
+            </a>
           </Link>
-        </li>
-        <li>
+        </div>
+        <div className="text-2xl mx-4 flex content-center">
           <Link href="/reference">
-            <a>reference</a>
+            <a className="text-grey-light font-title flex items-center hover:text-green-dark">
+              Reference
+            </a>
           </Link>
-          <Link href="/archiv">
-            <a>archiv</a>
-          </Link>
-        </li>
-        <li>
+        </div>
+        <div className="text-2xl mx-4 flex content-center">
           <Link href="/kontakty">
-            <a>kontakty</a>
+            <a className="text-grey-light font-title flex items-center hover:text-green-dark">
+              Kontakty
+            </a>
           </Link>
-        </li>
-      </ul>
+        </div>
+      </div>
     </footer>
   );
 }
