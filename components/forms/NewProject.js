@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import 'antd/dist/antd.css';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
-import awsconfig from '../../src/aws-exports';
 import { createNewProject } from '../../src/graphql/mutations';
-Amplify.configure(awsconfig);
 import { useRouter } from 'next/router';
 
 import { Form, Input, Button, Select } from 'antd';

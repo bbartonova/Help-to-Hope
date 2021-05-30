@@ -2,7 +2,6 @@ import Head from 'next/head';
 import { AppProvider } from '../libs/appContext';
 import '../styles/globals.css';
 import Amplify from 'aws-amplify';
-import awsconfig from '../src/aws-exports';
 
 Amplify.configure({
   aws_project_region: process.env.NEXT_PUBLIC_aws_project_region,
