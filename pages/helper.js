@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Layout from '../components/layout/Layout';
 import Project from '../components/projects/Project';
-import project_vzor from '../data/project_vzor.json';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import { listNewProjects } from '../src/graphql/queries';
 import { Select } from 'antd';

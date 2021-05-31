@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Layout from '../components/layout/Layout';
-import styles from '../styles/Page.module.scss';
 
 export default function successSent() {
   return (
