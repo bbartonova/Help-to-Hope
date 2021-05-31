@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../components/layout/Layout';
-import styles from '../styles/Page.module.scss';
 import NewProject from '../components/forms/NewProject';
 
 export default function NewHelper() {

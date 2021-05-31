@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../../components/layout/Layout';
-import styles from '../../styles/Page.module.scss';
 import InterestInProject from '../../components/forms/InterestInProject';
 import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../libs/appContext';

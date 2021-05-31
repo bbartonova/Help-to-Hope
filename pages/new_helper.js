@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Layout from '../components/layout/Layout';
-import styles from '../styles/Page.module.scss';
 import HelperOfProject from '../components/forms/HelperOfProject';
 import Link from 'next/link';
 

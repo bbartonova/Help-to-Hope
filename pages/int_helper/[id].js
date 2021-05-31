@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../../components/layout/Layout';
-import styles from '../../styles/Page.module.scss';
 import InterestedInHelper from '../../components/forms/InterestedInHelper';
 import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../libs/appContext';
