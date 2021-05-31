@@ -8,7 +8,7 @@ export default function Project(props) {
   const { setNameProjectLS } = useContext(AppContext);
 
   return (
-    <div className={styles.project}>
+    <div>
       <div>
         <h2>Název: {props.name}</h2>
         <p>oblast: {props.businessField}</p>

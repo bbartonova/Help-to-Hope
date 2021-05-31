@@ -7,7 +7,7 @@ export default function Helper(props) {
   const { setNameProjectLS } = useContext(AppContext);
 
   return (
-    <div className={styles.project}>
+    <div>
       <div>
         <h2>
           Jméno a příjemní: {props.name} {props.lastname}
