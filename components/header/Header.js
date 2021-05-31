@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from '../../styles/Header.module.scss';
 
 export default function Header(props) {
   return (

@@ -83,20 +83,6 @@ export default function InterestInProject(props) {
         </Form.Item>
 
         <Form.Item
-          placeholder="Vyberte si jednu z oblastí, ve které chcete pomáhat."
-          name="businessField"
-          label="Oblast činnosti, ve které chcete pomoci"
-          rules={[
-            { required: true, message: 'Prosím, vyberte jednu z možností.' },
-          ]}
-        >
-          <Select>
-            <Select.Option value="web">Web - tvorba</Select.Option>
-            <Select.Option value="marketing">Marketing</Select.Option>
-          </Select>
-        </Form.Item>
-
-        <Form.Item
           name="activityDescription"
           label="Popis činnosti"
           type="text"

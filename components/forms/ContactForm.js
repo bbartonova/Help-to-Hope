@@ -39,7 +39,7 @@ export default function ContactForm() {
         wrapperCol={{
           span: 14,
         }}
-        layout="horizontal"
+        layout="vertical"
         initialValues={{
           size: componentSize,
         }}
@@ -49,34 +49,45 @@ export default function ContactForm() {
         onFinishFailed={onFinishFailed}
       >
         <Form.Item
-          label="Jméno"
+          label="Jméno a příjmení"
           name="fullname"
-          rules={[{ required: true, message: 'Prosím, vyplňte své jméno.' }]}
+          rules={[
+            { required: true, message: 'Prosím, vyplňte celé své jméno.' },
+          ]}
         >
-          <Input placeholder="Uveďte své jméno." type="text" />
+          <Input placeholder="Napište nám své jméno." type="text" />
         </Form.Item>
         <Form.Item
           label="E-mail"
           name="email"
           rules={[{ required: true, message: 'Prosím, vyplňte svůj e-mail.' }]}
         >
-          <Input placeholder="Zde uveďte svůj kontaktní e-mail." type="email" />
+          <Input
+            placeholder="Uveďte váš e-mail, abychom vás mohli kontaktovat."
+            type="email"
+          />
         </Form.Item>
         <Form.Item label="Telefonní číslo" name="phonenumber">
-          <Input placeholder="Vaše kontaktní telefonní číslo." type="tel" />
+          <Input
+            placeholder="Budeme rádi, když nám napíšete své telefonní číslo."
+            type="tel"
+          />
         </Form.Item>
 
         <Form.Item name="subject" label="Předmět" type="text">
-          <Input placeholder="Předmět vaší zprávy." />
+          <Input placeholder="Předmět vaší zprávy" />
         </Form.Item>
 
         <Form.Item name="message" label="Zpráva" type="text">
-          <TextArea rows={4} placeholder="Vaše sdělení." />
+          <TextArea
+            rows={4}
+            placeholder="Napište nám, s čím vám můžeme pomoci."
+          />
         </Form.Item>
 
         <Form.Item name="submit" type="button">
           <Button
-            type="primary"
+            type="default"
             htmlType="submit"
             onClick={() => {
               setIsSent(!isSent);

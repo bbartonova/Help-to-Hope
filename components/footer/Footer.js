@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import styles from '../../styles/Footer.module.scss';
 import Header from '../header/Header';
 
 export default function Footer(props) {

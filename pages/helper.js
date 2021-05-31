@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import Layout from '../components/layout/Layout';
-import styles from '../styles/Page.module.scss';
 import Project from '../components/projects/Project';
 import project_vzor from '../data/project_vzor.json';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
