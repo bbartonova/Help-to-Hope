@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import styles from '../../styles/Layout.module.scss';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 
@@ -8,7 +7,7 @@ export default function Layout(props) {
     <div
       className={`${
         props.isLandingPage &&
-        'bg-index-background bg-no-repeat bg-cover h-screen flex flex-col'
+        'bg-index-background bg-no-repeat bg-cover h-screen flex flex-col justify-between'
       }`}
     >
       <Header isLandingPage={props.isLandingPage} />

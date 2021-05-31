@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Layout from '../components/layout/Layout';
 
 import InterestedInHelper from '../components/forms/InterestedInHelper';
-import styles from '../styles/Page.module.scss';
 
 export default function PageArchiv() {
   return (

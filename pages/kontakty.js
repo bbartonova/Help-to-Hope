@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Layout from '../components/layout/Layout';
-import styles from '../styles/Page.module.scss';
 import ContactForm from '../components/forms/ContactForm';
 
 export default function PageKontakty() {
@@ -13,13 +12,24 @@ export default function PageKontakty() {
       <Layout isLandingPage={false}>
         <main className={styles.main}>
           <h1>Kontakt</h1>
+          <h2>Help to Hope</h2>
+          <h3>Blanka Bartoňová</h3>
+          <h3> Martina Chromá</h3>
+
+          <p>
+            E-mail:{' '}
+            <a href="mailto:helptohope.info@gmail.com">
+              helptohope.info@gmail.com
+            </a>
+          </p>
+          <p>
+            Neváhejte se na nás kdykoliv obrátit. Tým Help to Hope: Blanka &
+            Martina
+          </p>
 
           <ContactForm></ContactForm>
-          <p>
-            Neváhejte se na nás kdykoliv obrátit. Můžete vyplnit formulář níže
-            nebo nás kontaktovat na e-mailu helptohope.info@gmail.com.
-          </p>
-          <p>Tým Help to Hope: Blanka & Martina :-)</p>
+
+          <p>* povinné položky</p>
         </main>
       </Layout>
     </>
