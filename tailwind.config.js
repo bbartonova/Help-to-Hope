@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: (theme) => ({
         'index-background': "url('/pozadi_hth.jpg')",
+        'ref-backround': "url('/pozadi_hth_ref.jpg')",
       }),
     },
     colors: {
@@ -12,7 +13,16 @@ module.exports = {
       green: { DEFAULT: '#72b01d', dark: '#3f7d20' },
     },
     fontFamily: { body: ['Montserrat'], title: ['Bebas Neue'] },
+
+    backgroundSize: {
+      auto: 'auto',
+      cover: 'cover',
+      contain: 'contain',
+      50: '50%',
+      75: '75%',
+    },
   },
+
   variants: {
     extend: {},
   },

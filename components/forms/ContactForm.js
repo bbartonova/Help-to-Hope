@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-
 import { Form, Input, Button } from 'antd';
 import axios from 'axios';
 
@@ -47,6 +46,7 @@ export default function ContactForm() {
         size={componentSize}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
+        className="font-body text-grey-dark text-base"
       >
         <Form.Item
           label="Jméno a příjmení"
@@ -85,7 +85,7 @@ export default function ContactForm() {
           />
         </Form.Item>
 
-        <Form.Item name="submit" type="button">
+        <Form.Item name="submit" type="button" className="hover:text-green">
           <Button
             type="default"
             htmlType="submit"
