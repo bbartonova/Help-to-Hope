@@ -23,7 +23,7 @@ export default function AboutProject() {
           </p>
 
           <h2 className="font-title text-grey text-4xl pt-4">
-            Jak vzniknul projekt Help to Hope
+            Jak vznikl projekt Help to Hope
           </h2>
 
           <p className="font-body text-grey-dark text-base">
@@ -47,19 +47,19 @@ export default function AboutProject() {
           </p>
 
           <h2 className="font-title text-grey text-4xl pt-4">
-            Kdy vzniknul projekt Help to Hope
+            Kdy vznikl projekt Help to Hope
           </h2>
 
           <p className="font-body text-grey-dark text-base">
-            Díky účásti na Digitální akademii Web od Czechitas, dostal projekt
+            Díky účasti na "Digitální akademii: Web" od Czechitas dostal projekt
             konkrétní podobu.
           </p>
           <p className="font-body text-grey-dark text-base">
             Na začátku akademie se k projektu připojila Blanka, která věnovala
             kus života studiu a práci v kulturních institucích, spolcích,
-            festivalech, ráda nápad Martiny přijala, protože zviditelnit se
+            festivalech. Ráda nápad Martiny přijala, protože zviditelnit se
             potřebují mnohé dobré aktivity i v těchto oblastech, které nezištně
-            svou činností pomáhají, ale nejsou ve světě online vidět a obecně se
+            svou činností pomáhají, ale nejsou v online světě vidět a obecně se
             o nich málo ví. Zbytečně tak dobré nápady zapadnou do zapomnění.
           </p>
 
