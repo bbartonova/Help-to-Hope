@@ -1,9 +1,8 @@
 import Head from 'next/head';
 import { AppProvider } from '../libs/appContext';
-import '../styles/globals.css';
 import Amplify from 'aws-amplify';
-import 'tailwindcss/tailwind.css';
 import 'antd/dist/antd.css';
+import '../styles/globals.css';
 
 Amplify.configure({
   aws_project_region: process.env.NEXT_PUBLIC_aws_project_region,
