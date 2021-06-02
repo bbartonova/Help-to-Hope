@@ -91,8 +91,16 @@ export default function HelperOfProject() {
           ]}
         >
           <Select>
-            <Select.Option value="web">Web - tvorba</Select.Option>
-            <Select.Option value="marketing">Marketing</Select.Option>
+            <Select.Option value="úpravy/tvorba webů">
+              úpravy/tvorba webů
+            </Select.Option>
+            <Select.Option value="online marketing">
+              online marketing
+            </Select.Option>
+            <Select.Option value="grafika">grafika</Select.Option>
+            <Select.Option value="jiná IT oblasti">
+              jiná IT oblast
+            </Select.Option>
           </Select>
         </Form.Item>
 

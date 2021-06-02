@@ -13,7 +13,7 @@ export default function PageReference() {
       <Layout isLandingPage={false}>
         <main className="p-8 min-h-screen">
           <h1 className="font-title text-green text-5xl">Naše reference</h1>
-          <p className="font-body text-grey-dark text-base">
+          <p className="font-body text-grey-dark text-base mb-6">
             Radi bychom vám zde představili vybrané projekty, které se nám
             podařilo propojit.
           </p>

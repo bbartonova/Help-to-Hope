@@ -7,30 +7,50 @@ export default function Helper(props) {
   const { setNameProjectLS } = useContext(AppContext);
 
   return (
-    <div>
-      <div>
-        <h2>
-          Jméno a příjemní: {props.name} {props.lastname}
+    <div className="bg-grey-light p-8 w-3/4 rounded-xl mx-auto m-4 border-b-2 border-b-grey flex flex-col">
+      <div className="flex flex-col">
+        <h2 className="font-title text-green text-3xl py-4">
+          Jméno: {props.name} {props.lastname}
         </h2>
-        <p>oblast: {props.businessField}</p>
-        <p>Popis činnosti: {props.activityDescription}</p>
+        <p className="font-body text-grey-dark text-base pb-3">
+          Oblast činnosti: {props.businessField}
+        </p>
+        <p className="font-body text-grey-dark text-base pb-3">
+          Popis činnosti: {props.activityDescription}
+        </p>
       </div>
       <div style={{ display: isVisible === false ? 'none' : null }}>
-        <p>Odkazy: {props.links}</p>
-        <p>Reference: {props.reference}</p>
-        <p>Časové možnosti: {props.timeAvailability}</p>
-        <p>Preferovaná oblast pomoci: {props.projectArea}</p>
+        <p className="font-body text-grey-dark text-base pb-3">
+          Odkazy: {props.links}
+        </p>
+        <p className="font-body text-grey-dark text-base pb-3">
+          Reference: {props.reference}
+        </p>
+        <p className="font-body text-grey-dark text-base pb-3">
+          Časové možnosti: {props.timeAvailability}
+        </p>
+        <p className="font-body text-grey-dark text-base pb-3">
+          Preferovaná oblast pomoci: {props.projectArea}
+        </p>
       </div>
-      <button onClick={() => setIsVisible(!isVisible)}>
-        {isVisible === true
-          ? `Skrýt informace o pomocníku`
-          : `Další informace o pomocníku`}
-      </button>
-      <Link href={`/int_helper/${props.id}`}>
-        <a onClick={() => setNameProjectLS(props.name + ' ' + props.lastname)}>
-          Chci pomoct od pomocníka
-        </a>
-      </Link>
+      <div>
+        <button
+          className="border-green border-solid border-2 rounded-md font-title text-grey-dark text-base  hover:bg-green hover:bg-opacity-100 p-2 font-extralight mr-8"
+          onClick={() => setIsVisible(!isVisible)}
+        >
+          {isVisible === true
+            ? `Skrýt další informace`
+            : `Zobrazit další informace`}
+        </button>
+        <Link href={`/int_helper/${props.id}`}>
+          <a
+            className="border-green border-solid border-2 rounded-md font-title text-grey-dark text-base  hover:bg-green hover:bg-opacity-100 p-2 font-extralight"
+            onClick={() => setNameProjectLS(props.name + ' ' + props.lastname)}
+          >
+            Mám zájem o spolupráci
+          </a>
+        </Link>
+      </div>
     </div>
   );
 }
