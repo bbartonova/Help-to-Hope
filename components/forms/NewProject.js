@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import { createNewProject } from '../../src/graphql/mutations';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 import { Form, Input, Button, Select } from 'antd';
 
@@ -48,6 +49,7 @@ export default function NewProject() {
         size={componentSize}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
+        className="font-body text-grey-dark text-base"
       >
         <Form.Item
           label="Název"
@@ -169,6 +171,16 @@ export default function NewProject() {
             placeholder="Můžete nabídnout případnému IT odborníkovi originální nefinanční odměnu"
           />
         </Form.Item>
+        <p className="font-body text-grey-dark text-base mb-6">
+          Vyplněné údaje budou použity pouze za účelem zprostředkování kontaktu.
+        </p>
+        <p className="font-body text-grey-dark text-base mb-6">
+          Další informace o zpracování osobních údajů najdete
+          <Link href="/gdpr">
+            <a> ZDE</a>
+          </Link>
+          .
+        </p>
 
         <Form.Item name="submit" type="button">
           <Button

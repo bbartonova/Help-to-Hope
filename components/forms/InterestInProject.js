@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 import { Form, Input, Button, Select } from 'antd';
 import axios from 'axios';
@@ -108,6 +109,16 @@ export default function InterestInProject(props) {
         >
           <TextArea placeholder="Pokud chcete, uveďte, kolik času můžete projektu věnovat" />
         </Form.Item>
+        <p className="font-body text-grey-dark text-base mb-6">
+          Vyplněné údaje budou použity pouze za účelem zprostředkování kontaktu.
+        </p>
+        <p className="font-body text-grey-dark text-base mb-6">
+          Další informace o zpracování osobních údajů najdete
+          <Link href="/gdpr">
+            <a> ZDE</a>
+          </Link>
+          .
+        </p>
 
         <Form.Item name="submit" type="button">
           <Button
