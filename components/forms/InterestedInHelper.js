@@ -43,7 +43,7 @@ export default function InterestedInHelper(props) {
         wrapperCol={{
           span: 14,
         }}
-        layout="horizontal"
+        layout="vertical"
         initialValues={{
           size: componentSize,
         }}
@@ -51,6 +51,7 @@ export default function InterestedInHelper(props) {
         size={componentSize}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
+        className="font-body text-grey-dark text-base"
       >
         <Form.Item
           label="Název"
@@ -59,15 +60,15 @@ export default function InterestedInHelper(props) {
             { required: true, message: 'Prosím, vyplňte název projektu.' },
           ]}
         >
-          <Input placeholder="Uveďte název vašeho projektu." type="text" />
+          <Input placeholder="Uveďte název vašeho projektu" type="text" />
         </Form.Item>
 
         <Form.Item
-          label="Popis vaší činnosti"
+          label="Popis projektu"
           name="eactivityDescription"
-          rules={[{ required: true, message: 'Popište, co děláte.' }]}
+          rules={[{ required: true, message: 'Popište více váš projekt.' }]}
         >
-          <TextArea rows={4} placeholder="Popis vaší činnosti." />
+          <TextArea rows={4} placeholder="Představte váš projekt" />
         </Form.Item>
         <Form.Item
           label="Účel projektu"
@@ -82,7 +83,7 @@ export default function InterestedInHelper(props) {
         >
           <TextArea
             rows={4}
-            placeholder="Popište, komu váš projekt má pomoci."
+            placeholder="Popište, komu váš projekt má pomoci"
           />
         </Form.Item>
 
@@ -96,17 +97,14 @@ export default function InterestedInHelper(props) {
             },
           ]}
         >
-          <Input placeholder="Zde vyplňte své jméno a příjmení." type="text" />
+          <Input placeholder="Zde vyplňte své jméno a příjmení" type="text" />
         </Form.Item>
         <Form.Item label="Název organizace" name="organization">
-          <Input placeholder="Vyplňte název organizace." type="text" />
+          <Input placeholder="Vyplňte název organizace" type="text" />
         </Form.Item>
 
         <Form.Item label="Telefon" name="phonenumber">
-          <Input
-            placeholder="Prosím, vyplňte své telefonní číslo."
-            type="tel"
-          />
+          <Input placeholder="Prosím, vyplňte své telefonní číslo" type="tel" />
         </Form.Item>
         <Form.Item
           label="E-mail"
@@ -118,11 +116,11 @@ export default function InterestedInHelper(props) {
             },
           ]}
         >
-          <Input placeholder="Váš e-mail." type="email" />
+          <Input placeholder="Váš e-mail" type="email" />
         </Form.Item>
         <Form.Item label="Stávající web" name="oldWeb">
           <Input
-            placeholder="Pokud máte, uveďte vaše stávající webové stránky."
+            placeholder="Pokud máte, uveďte vaše webové stránky"
             type="text"
           />
         </Form.Item>
@@ -136,12 +134,13 @@ export default function InterestedInHelper(props) {
         <Form.Item name="reward" label="Možná odměna" type="text">
           <TextArea
             rows={4}
-            placeholder="Můžete nabídnout případnému IT odborníkovi originální nefinanční odměnu."
+            placeholder="Můžete nabídnout případnému IT odborníkovi originální nefinanční odměnu"
           />
         </Form.Item>
 
         <Form.Item name="submit" type="button">
           <Button
+            className="bg-grey-light border-green-dark border-2 text-green-dark hover:bg-green hover:text-grey-light hover:border-green-dark hover:border-2"
             type="primary"
             htmlType="submit"
             type="primary"

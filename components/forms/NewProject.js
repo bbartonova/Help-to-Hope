@@ -40,7 +40,7 @@ export default function NewProject() {
         wrapperCol={{
           span: 14,
         }}
-        layout="horizontal"
+        layout="vertical"
         initialValues={{
           size: componentSize,
         }}
@@ -56,11 +56,11 @@ export default function NewProject() {
             { required: true, message: 'Prosím, vyplňte název projektu.' },
           ]}
         >
-          <Input placeholder="Uveďte název vašeho projektu." type="text" />
+          <Input placeholder="Uveďte název vašeho projektu" type="text" />
         </Form.Item>
 
         <Form.Item
-          label="Popis vaší činnosti"
+          label="Popis vaši činnosti"
           name="eactivityDescription"
           rules={[
             {
@@ -69,7 +69,10 @@ export default function NewProject() {
             },
           ]}
         >
-          <TextArea rows={4} placeholder="Popis vaší činnosti." />
+          <TextArea
+            rows={4}
+            placeholder="Popište, co děláte a komu tím pomáháte"
+          />
         </Form.Item>
         <Form.Item
           label="Popis projektu"
@@ -82,7 +85,31 @@ export default function NewProject() {
             },
           ]}
         >
-          <TextArea rows={4} placeholder="Popište, s čím potřebujete pomoci." />
+          <TextArea
+            rows={4}
+            placeholder="Popište, s čím potřebujete pomoci (např. nový web apod.)"
+          />
+        </Form.Item>
+        <Form.Item
+          placeholder="Oblast, ve které potřebujete pomoci s projektem."
+          name="businessField"
+          label="Oblast, ve které potřebujete pomoci"
+          rules={[
+            { required: true, message: 'Prosím, vyberte jednu z možností.' },
+          ]}
+        >
+          <Select>
+            <Select.Option value="úpravy/tvorba webů">
+              úpravy/tvorba webů
+            </Select.Option>
+            <Select.Option value="online marketing">
+              online marketing
+            </Select.Option>
+            <Select.Option value="grafika">grafika</Select.Option>
+            <Select.Option value="jiná IT oblasti">
+              jiná IT oblast
+            </Select.Option>
+          </Select>
         </Form.Item>
 
         <Form.Item
@@ -95,17 +122,14 @@ export default function NewProject() {
             },
           ]}
         >
-          <Input placeholder="Zde vyplňte své jméno a příjmení." type="text" />
+          <Input placeholder="Zde vyplňte své jméno a příjmení" type="text" />
         </Form.Item>
         <Form.Item label="Název organizace" name="organization">
-          <Input placeholder="Vyplňte název organizace." type="text" />
+          <Input placeholder="Vyplňte název organizace" type="text" />
         </Form.Item>
 
         <Form.Item label="Telefon" name="phonenumber">
-          <Input
-            placeholder="Prosím, vyplňte své telefonní číslo."
-            type="tel"
-          />
+          <Input placeholder="Prosím, vyplňte své telefonní číslo" type="tel" />
         </Form.Item>
         <Form.Item
           label="E-mail"
@@ -117,11 +141,11 @@ export default function NewProject() {
             },
           ]}
         >
-          <Input placeholder="Váš e-mail." type="email" />
+          <Input placeholder="Váš e-mail" type="email" />
         </Form.Item>
         <Form.Item label="Stávající web" name="oldWeb">
           <Input
-            placeholder="Pokud máte, uveďte vaše stávající webové stránky."
+            placeholder="Pokud máte, uveďte vaše stávající webové stránky"
             type="text"
           />
         </Form.Item>
@@ -132,36 +156,23 @@ export default function NewProject() {
           />
         </Form.Item>
 
-        <Form.Item
-          placeholder="Oblast, ve které potřebujete pomoci s projektem."
-          name="businessField"
-          label="Oblast činnosti"
-          rules={[
-            { required: true, message: 'Prosím, vyberte jednu z možností.' },
-          ]}
-        >
-          <Select>
-            <Select.Option value="web">Web - tvorba</Select.Option>
-            <Select.Option value="marketing">Marketing</Select.Option>
-          </Select>
-        </Form.Item>
-
         <Form.Item name="experiences" label="Preference zkušeností" type="text">
           <TextArea
             rows={4}
-            placeholder="Uveďte, zda požadujete nějaké zkušenosti od případného IT odborníka."
+            placeholder="Uveďte, zda požadujete nějaké zkušenosti od případného IT odborníka"
           />
         </Form.Item>
 
         <Form.Item name="reward" label="Možná odměna" type="text">
           <TextArea
             rows={4}
-            placeholder="Můžete nabídnout případnému IT odborníkovi originální nefinanční odměnu."
+            placeholder="Můžete nabídnout případnému IT odborníkovi originální nefinanční odměnu"
           />
         </Form.Item>
 
         <Form.Item name="submit" type="button">
           <Button
+            className="bg-grey-light border-green-dark border-2 text-green-dark hover:bg-green hover:text-grey-light hover:border-green-dark hover:border-2"
             type="primary"
             htmlType="submit"
             onClick={() => {
@@ -169,7 +180,9 @@ export default function NewProject() {
               router.push('/successAdd');
             }}
           >
-            {isSent === true ? `Přidáno` : `Přidat`}
+            {isSent === true
+              ? `Přidány informace o projektu`
+              : `Přidat nový projekt`}
           </Button>
         </Form.Item>
       </Form>
