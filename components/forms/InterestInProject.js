@@ -42,7 +42,7 @@ export default function InterestInProject(props) {
         wrapperCol={{
           span: 14,
         }}
-        layout="horizontal"
+        layout="vertical"
         initialValues={{
           size: componentSize,
         }}
@@ -50,36 +50,37 @@ export default function InterestInProject(props) {
         size={componentSize}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
+        className="font-body text-grey-dark text-base"
       >
         <Form.Item
           label="Jméno"
           name="name"
           rules={[{ required: true, message: 'Prosím, vyplňte své jméno.' }]}
         >
-          <Input placeholder="Zde vyplňte své jméno." type="text" />
+          <Input placeholder="Zde vyplňte své jméno" type="text" />
         </Form.Item>
         <Form.Item
           label="Příjmení"
           name="lastname"
           rules={[{ required: true, message: 'Prosím, vyplňte své příjmení.' }]}
         >
-          <Input placeholder="Vyplňte své příjmení." type="text" />
+          <Input placeholder="Vyplňte své příjmení" type="text" />
         </Form.Item>
         <Form.Item
           label="E-mail"
           name="email"
           rules={[{ required: true, message: 'Prosím, vyplňte svůj e-mail.' }]}
         >
-          <Input placeholder="Váš e-mail." type="email" />
+          <Input placeholder="Váš e-mail" type="email" />
         </Form.Item>
         <Form.Item label="Telefon" name="phonenumber">
-          <Input
-            placeholder="Prosím, vyplňte své telefonní číslo."
-            type="tel"
-          />
+          <Input placeholder="Prosím, vyplňte své telefonní číslo" type="tel" />
         </Form.Item>
         <Form.Item name="links" label="Odkazy" type="text">
-          <TextArea rows={4} placeholder="Osobní weby, sociální sítě, apod." />
+          <TextArea
+            rows={4}
+            placeholder="Odkazy na vaše osobní weby, sociální sítě, apod."
+          />
         </Form.Item>
 
         <Form.Item
@@ -90,13 +91,13 @@ export default function InterestInProject(props) {
             { required: true, message: 'Prosím, nezapomeňte vyplnit pole.' },
           ]}
         >
-          <TextArea rows={4} placeholder="Popište více to, co děláte." />
+          <TextArea rows={4} placeholder="Popište více vaši činnost" />
         </Form.Item>
 
         <Form.Item name="reference" label="Reference" type="text">
           <TextArea
             rows={4}
-            placeholder="Zde můžete uvést nějaký váš referenční projekt."
+            placeholder="Zde můžete uvést nějaké vaše referenční projekty"
           />
         </Form.Item>
 
@@ -105,11 +106,12 @@ export default function InterestInProject(props) {
           label="Kolik času můžete poskytnout?"
           type="text"
         >
-          <TextArea placeholder="Pokud chcete, uveďte, kolik času můžete projektu věnovat." />
+          <TextArea placeholder="Pokud chcete, uveďte, kolik času můžete projektu věnovat" />
         </Form.Item>
 
         <Form.Item name="submit" type="button">
           <Button
+            className="bg-grey-light border-green-dark border-2 text-green-dark hover:bg-green hover:text-grey-light hover:border-green-dark hover:border-2"
             type="primary"
             htmlType="submit"
             onClick={() => {
