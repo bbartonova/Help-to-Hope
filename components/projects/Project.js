@@ -8,31 +8,62 @@ export default function Project(props) {
   const { setNameProjectLS } = useContext(AppContext);
 
   return (
-    <div>
-      <div>
-        <h2>Název: {props.name}</h2>
-        <p>oblast: {props.businessField}</p>
-        <p>Popis činnosti: {props.eactivityDescription}</p>
-        <p>Účel projektu: {props.projectPurpose}</p>
+    <div className="bg-grey-light p-8 w-3/4 rounded-xl mx-auto m-4 border-b-2 border-b-grey flex flex-col">
+      <div className="flex flex-col">
+        <h2 className="font-title text-green text-3xl py-4">
+          Název: {props.name}
+        </h2>
+        <p className="font-body text-grey-dark text-base pb-3">
+          oblast: {props.businessField}
+        </p>
+        <p className="font-body text-grey-dark text-base pb-3">
+          Popis činnosti: {props.eactivityDescription}
+        </p>
+        <p className="font-body text-grey-dark text-base pb-3">
+          Účel projektu: {props.projectPurpose}
+        </p>
       </div>
       <div style={{ display: isVisible === false ? 'none' : null }}>
-        <p>Jméno a příjmení: {props.fullname}</p>
-        <p>Oragnizace: {props.organization}</p>
-        <p>Stávající web a další odkazy:</p>
-        <p>
-          web: {props.oldWeb}, další odkazy: {props.links}
+        <p className="font-body text-grey-dark text-base pb-3">
+          Jméno a příjmení: {props.fullname}
         </p>
-        <p>Preference zkušeností: {props.experiences}</p>
-        <p>Možná odměna: {props.reward}</p>
+        <p className="font-body text-grey-dark text-base pb-3">
+          Oragnizace: {props.organization}
+        </p>
+        <p className="font-body text-grey-dark text-base pb-3">
+          Stávající web a další odkazy:
+        </p>
+        <p className="font-body text-grey-dark text-base pb-3">
+          web: {props.oldWeb}
+        </p>
+        <p className="font-body text-grey-dark text-base pb-3">
+          další odkazy: {props.links}
+        </p>
+        <p className="font-body text-grey-dark text-base pb-3">
+          Preference zkušeností: {props.experiences}
+        </p>
+        <p className="font-body text-grey-dark text-base pb-3">
+          Možná odměna: {props.reward}
+        </p>
       </div>
-      <button onClick={() => setIsVisible(!isVisible)}>
-        {isVisible === true
-          ? `Skrýt informace o projektu`
-          : `Další informace o projektu`}
-      </button>
-      <Link href={`/int_project/${props.id}`}>
-        <a onClick={() => setNameProjectLS(props.name)}>Chci pomoct projektu</a>
-      </Link>
+      <div>
+        <button
+          className="border-green border-solid border-2 rounded-md font-title text-grey-dark text-base  hover:bg-green hover:bg-opacity-100 hover:text-grey-light p-2 font-extralight mr-8"
+          onClick={() => setIsVisible(!isVisible)}
+        >
+          {isVisible === true
+            ? `Skrýt informace o projektu`
+            : `Další informace o projektu`}
+        </button>
+        <Link href={`/int_project/${props.id}`}>
+          <a
+            className="border-green border-solid border-2 rounded-md font-title text-grey-dark text-base  hover:bg-green hover:bg-opacity-100 p-2 font-extralight"
+            onClick={() => setNameProjectLS(props.name)}
+          >
+            Chci pomoct projektu
+          </a>
+        </Link>
+      </div>
     </div>
   );
 }

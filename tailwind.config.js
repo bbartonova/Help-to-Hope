@@ -7,6 +7,7 @@ module.exports = {
         'index-background': "url('/pozadi_hth.jpg')",
         'projects-backround': "url('/pozadi_projects.jpg')",
         'success-backround': "url('/success.jpg')",
+        'helper-backround': "url('/pozadi_helper.jpg')",
       }),
     },
     colors: {
