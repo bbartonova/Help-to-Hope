@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { Form, Input, Button } from 'antd';
+import Link from 'next/link';
 import axios from 'axios';
 
 export default function ContactForm() {
@@ -84,9 +85,20 @@ export default function ContactForm() {
             placeholder="Napište nám, s čím vám můžeme pomoci."
           />
         </Form.Item>
+        <p className="font-body text-grey-dark text-base mb-6">
+          Vyplněné údaje budou použity pouze za účelem kontaktu.
+        </p>
+        <p className="font-body text-grey-dark text-base mb-6">
+          Další informace o zpracování osobních údajů najdete
+          <Link href="/gdpr">
+            <a> ZDE</a>
+          </Link>
+          .
+        </p>
 
-        <Form.Item name="submit" type="button" className="hover:text-green">
+        <Form.Item name="submit" type="button">
           <Button
+            className="bg-grey-light border-green-dark border-2 text-green-dark hover:bg-green hover:text-grey-light hover:border-green-dark hover:border-2"
             type="default"
             htmlType="submit"
             onClick={() => {

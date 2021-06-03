@@ -13,11 +13,11 @@ export default function PageKontakty() {
         <main className="p-8 min-h-screen">
           <h1 className="font-title text-green text-5xl">Kontakty</h1>
           <h2 className="font-title text-grey text-4xl pt-4">Help to Hope</h2>
-          <p className="font-title text-grey text-3xl pt-4">
+          <p className="font-title text-grey text-3xl py-4">
             Blanka Bartoňová, Martina Chromá
           </p>
 
-          <p className="font-body text-grey-dark text-base">
+          <p className="font-body text-grey-dark text-base pb-3">
             E-mail:
             <p>
               <a className="text-green" href="mailto:helptohope.info@gmail.com">
@@ -25,11 +25,11 @@ export default function PageKontakty() {
               </a>
             </p>
           </p>
-          <p className="font-body text-grey-dark text-base">
+          <p className="font-body text-grey-dark text-base pb-3">
             Neváhejte se na nás kdykoliv obrátit. Tým Help to Hope: Blanka a
             Martina
           </p>
-          <h2 className="font-title text-grey text-4xl pt-4">
+          <h2 className="font-title text-grey text-4xl py-4">
             Kontaktujte nás
           </h2>
 

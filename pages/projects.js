@@ -100,7 +100,7 @@ export default function Projects() {
             </h2>
             <div /*style={{ display: 'flex', justifyContent: 'center' }}*/>
               <Select
-                className="py-8 font-body text-grey-dark"
+                className="py-8 font-body text-grey-dark w-96"
                 onChange={onFilterChange}
                 placeholder="Vyberte oblast:"
               >

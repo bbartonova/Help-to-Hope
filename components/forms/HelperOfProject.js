@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import { createHelperOfProject } from '../../src/graphql/mutations';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 import { Form, Input, Button, Select } from 'antd';
 
@@ -42,7 +43,7 @@ export default function HelperOfProject() {
         wrapperCol={{
           span: 14,
         }}
-        layout="horizontal"
+        layout="vertical"
         initialValues={{
           size: componentSize,
         }}
@@ -50,42 +51,43 @@ export default function HelperOfProject() {
         size={componentSize}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
+        className="font-body text-grey-dark text-base"
       >
         <Form.Item
           label="Jméno"
           name="name"
           rules={[{ required: true, message: 'Prosím, vyplňte své jméno.' }]}
         >
-          <Input placeholder="Zde vyplňte své jméno." type="text" />
+          <Input placeholder="Zde vyplňte své jméno" type="text" />
         </Form.Item>
         <Form.Item
           label="Příjmení"
           name="lastname"
           rules={[{ required: true, message: 'Prosím, vyplňte své příjmení.' }]}
         >
-          <Input placeholder="Vyplňte své příjmení." type="text" />
+          <Input placeholder="Vyplňte své příjmení" type="text" />
         </Form.Item>
         <Form.Item
           label="E-mail"
           name="email"
           rules={[{ required: true, message: 'Prosím, vyplňte svůj e-mail.' }]}
         >
-          <Input placeholder="Váš e-mail." type="email" />
+          <Input placeholder="Váš e-mail" type="email" />
         </Form.Item>
         <Form.Item label="Telefon" name="phonenumber">
-          <Input
-            placeholder="Prosím, vyplňte své telefonní číslo."
-            type="tel"
-          />
+          <Input placeholder="Prosím, vyplňte své telefonní číslo" type="tel" />
         </Form.Item>
         <Form.Item name="links" label="Odkazy" type="text">
-          <TextArea rows={4} placeholder="Osobní weby, sociální sítě, apod." />
+          <TextArea
+            rows={4}
+            placeholder="Odkazy na vaše osobní weby, sociální sítě, apod."
+          />
         </Form.Item>
 
         <Form.Item
           placeholder="Vyberte si jednu z oblastí, ve které chcete pomáhat."
           name="businessField"
-          label="Oblast činnosti, ve které chcete pomoci"
+          label="Oblast, ve které chcete pomáhat"
           rules={[
             { required: true, message: 'Prosím, vyberte jednu z možností.' },
           ]}
@@ -112,13 +114,13 @@ export default function HelperOfProject() {
             { required: true, message: 'Prosím, nezapomeňte vyplnit pole.' },
           ]}
         >
-          <TextArea rows={4} placeholder="Popište více to, co děláte." />
+          <TextArea rows={4} placeholder="Popište více to, co děláte" />
         </Form.Item>
 
         <Form.Item name="reference" label="Reference" type="text">
           <TextArea
             rows={4}
-            placeholder="Zde můžete uvést nějaký váš referenční projekt."
+            placeholder="Zde můžete uvést nějaký váš referenční projekt"
           />
         </Form.Item>
 
@@ -127,7 +129,7 @@ export default function HelperOfProject() {
           label="Kolik času můžete poskytnout?"
           type="text"
         >
-          <TextArea placeholder="Pokud chcete, uveďte, kolik času můžete projektu věnovat." />
+          <TextArea placeholder="Pokud chcete, uveďte, kolik času můžete projektu věnovat" />
         </Form.Item>
         <Form.Item
           name="projectArea"
@@ -139,9 +141,20 @@ export default function HelperOfProject() {
             placeholder="Např. kultura, příroda, vzdělávání, sport, apod."
           />
         </Form.Item>
+        <p className="font-body text-grey-dark text-base mb-6">
+          Vyplněné údaje budou použity pouze za účelem zprostředkování kontaktu.
+        </p>
+        <p className="font-body text-grey-dark text-base mb-6">
+          Další informace o zpracování osobních údajů najdete
+          <Link href="/gdpr">
+            <a> ZDE</a>
+          </Link>
+          .
+        </p>
 
         <Form.Item name="submit" type="button">
           <Button
+            className="bg-grey-light border-green-dark border-2 text-green-dark hover:bg-green hover:text-grey-light hover:border-green-dark hover:border-2"
             type="primary"
             htmlType="submit"
             onClick={() => {
@@ -149,7 +162,7 @@ export default function HelperOfProject() {
               router.push('/successAdd');
             }}
           >
-            {isSent === true ? `Přidáno` : `Přidat`}
+            {isSent === true ? `Zaregistrováno` : `Registrovat se`}
           </Button>
         </Form.Item>
       </Form>

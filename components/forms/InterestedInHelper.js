@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 import { Form, Input, Button } from 'antd';
 
@@ -137,6 +138,16 @@ export default function InterestedInHelper(props) {
             placeholder="Můžete nabídnout případnému IT odborníkovi originální nefinanční odměnu"
           />
         </Form.Item>
+        <p className="font-body text-grey-dark text-base mb-6">
+          Vyplněné údaje budou použity pouze za účelem zprostředkování kontaktu.
+        </p>
+        <p className="font-body text-grey-dark text-base mb-6">
+          Další informace o zpracování osobních údajů najdete
+          <Link href="/gdpr">
+            <a> ZDE</a>
+          </Link>
+          .
+        </p>
 
         <Form.Item name="submit" type="button">
           <Button
