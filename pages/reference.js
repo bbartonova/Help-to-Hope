@@ -19,7 +19,7 @@ export default function PageReference() {
           </p>
 
           <div className=" bg-grey-light text-right flex rounded-lg border-b-2 border-grey">
-            <div className="flex justify-start w-1/3">
+            <div className="flex justify-start w-1/3 py-4">
               <Image
                 src="/ctyrak_ref.jpg"
                 alt="web ctyrak"

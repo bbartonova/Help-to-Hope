@@ -9,3 +9,7 @@
 a {
   color: #72b01d;
 }
+
+a:hover {
+  color: #f3eff5;
+}

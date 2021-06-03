@@ -6,6 +6,7 @@ module.exports = {
       backgroundImage: (theme) => ({
         'index-background': "url('/pozadi_hth.jpg')",
         'projects-backround': "url('/pozadi_projects.jpg')",
+        'success-backround': "url('/success.jpg')",
       }),
     },
     colors: {
