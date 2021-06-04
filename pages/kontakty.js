@@ -18,12 +18,10 @@ export default function PageKontakty() {
           </p>
 
           <p className="font-body text-grey-dark text-base pb-3">
-            E-mail:
-            <p>
-              <a className="text-green" href="mailto:helptohope.info@gmail.com">
-                helptohope.info@gmail.com
-              </a>
-            </p>
+            E-mail:{' '}
+            <a className="text-green" href="mailto:helptohope.info@gmail.com">
+              helptohope.info@gmail.com
+            </a>
           </p>
           <p className="font-body text-grey-dark text-base pb-3">
             Neváhejte se na nás kdykoliv obrátit. Tým Help to Hope: Blanka a

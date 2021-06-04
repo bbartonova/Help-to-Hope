@@ -36,7 +36,7 @@ export default function AboutProject() {
           <p className="font-body text-grey-dark text-base">
             Někdy ale i tato naděje potřebuje pomoc. Potřebuje pomoci být více a
             lépe vidět v online světě, aby se dostala k více lidem, kteří ji
-            potřebují. V dnešní době možná více, než kdy předtím, kdy se svět
+            potřebují. V dnešní době možná více než kdy předtím, kdy se svět
             přesouvá do online světa. Martina věnovala farnosti svůj čas a
             znalosti a vznikly tak nové webové stránky.
           </p>
@@ -88,8 +88,7 @@ export default function AboutProject() {
           </p>
 
           <p className="font-body text-grey-dark text-base">
-            Tento projekt, vytvořený v rámci Digitální akademie Web (Czechitas),
-            si klade za cíl propojit tyto dvě strany.
+            Tento projekt si klade za cíl propojit tyto dvě strany.
           </p>
 
           <p className="font-body text-grey-dark text-base">

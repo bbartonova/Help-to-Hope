@@ -70,11 +70,11 @@ export default function PageGdpr() {
           <h3 className="font-title text-grey text-3xl pt-4">1. Správce</h3>
           <p className="font-body text-grey-dark text-base leading-relaxed">
             Help to Hope je správcem osobních údajů ve vztahu ke všem službám
-            poskytovaným prostřednictvím webových stránek helptohope.cz, s
-            výjimkou služeb uvedených čl. 7. těchto Zásad, ve kterých má Help to
-            Hope postavení zpracovatele. Help to Hope spravuje osobní údaje
-            přímo. Help to Hope nejmenovala pověřence pro ochranu osobních
-            údajů.
+            poskytovaným prostřednictvím webových stránek{' '}
+            <a href="https://www.helptohope.cz/">helptohope.cz</a>, s výjimkou
+            služeb uvedených čl. 7. těchto Zásad, ve kterých má Help to Hope
+            postavení zpracovatele. Help to Hope spravuje osobní údaje přímo.
+            Help to Hope nejmenovala pověřence pro ochranu osobních údajů.
           </p>
 
           <p className="font-body text-grey-dark text-base leading-relaxed">
@@ -230,9 +230,10 @@ export default function PageGdpr() {
           </p>
 
           <p className="font-body text-grey-dark text-base leading-relaxed">
-            IT specialisté zajišťující provoz webových stránek helptohope.cz,
-            marketingové analýzy a e-mailing, poskytovatelé platebních služeb,
-            obchodní partneři zajišťující realizaci jednotlivých služeb (např.
+            IT specialisté zajišťující provoz webových stránek{' '}
+            <a href="https://www.helptohope.cz/">helptohope.cz</a>, marketingové
+            analýzy a e-mailing, poskytovatelé platebních služeb, obchodní
+            partneři zajišťující realizaci jednotlivých služeb (např.
             fotografové, advokáti, osoby zajišťující službu KOMFORT, asistenti
             prodeje, zpracovatelé energetických štítků apod.), osoby ze skupiny
             Help to Hope podílející se na poskytování služeb uživatelů, se

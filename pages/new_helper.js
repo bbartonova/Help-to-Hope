@@ -30,9 +30,9 @@ export default function NewHelper() {
           <p className="font-body text-grey-dark text-base mb-6">
             Pokud si nebudete vědět rady s vyplněním, zkuste se podívat na naše
             <Link href="/faq">
-              <a> tipy a doporučení</a>
+              <a> tipy a doporučení </a>
             </Link>
-            , nebo nás
+            nebo nás
             <Link href="/kontakty">
               <a> kontaktujte</a>
             </Link>
