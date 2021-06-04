@@ -145,7 +145,7 @@ export default function HelperOfProject() {
           Vyplněné údaje budou použity pouze za účelem zprostředkování kontaktu.
         </p>
         <p className="font-body text-grey-dark text-base mb-6">
-          Další informace o zpracování osobních údajů najdete
+          Další informace týkající se zpracování osobních údajů naleznete
           <Link href="/gdpr">
             <a> ZDE</a>
           </Link>

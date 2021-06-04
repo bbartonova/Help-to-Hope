@@ -14,7 +14,7 @@ export default function PageReference() {
         <main className="p-8 min-h-screen">
           <h1 className="font-title text-green text-5xl">Naše reference</h1>
           <p className="font-body text-grey-dark text-base mb-6">
-            Radi bychom vám zde představili vybrané projekty, které se nám
+            Rádi bychom vám zde představili vybrané projekty, které se nám
             podařilo propojit.
           </p>
 
@@ -33,7 +33,7 @@ export default function PageReference() {
                 Webové stránky pro Salesiánskou farnost České Budějovice
               </h2>
               <p className="font-body text-grey-dark text-base">
-                Kompletní re-dessign stávajících webových stránek, od návrhu,
+                Kompletní re-design stávajících webových stránek - od návrhu
                 přes grafiku, tvorbu až po následnou správu webu.
               </p>
               <p className="font-body text-grey-dark text-base">

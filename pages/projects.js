@@ -57,22 +57,22 @@ export default function Projects() {
               </h2>
               <p className="font-body text-grey-dark text-base pb-3">
                 Projekt Help to Hope má pomáhat jednotlivcům, skupinám,
-                dobrovolníkům, všem těm, kdo pomáhají bezištně ostatním a
-                potřebují být více, nebo lépe vidět v online světě.
+                dobrovolníkům, všem těm, kteří pomáhají nezištně ostatním a
+                potřebují být více nebo lépe vidět v online světě.
               </p>
               <p className="font-body text-grey-dark text-base pb-3">
                 Být lépe vidět znamená přinést naději více lidem. Chceme dělat
                 naději dostupnější.
               </p>
               <p className="font-body text-grey-dark text-base pb-3">
-                Pokud máte dobrý nápad, projekt, nebo již reálně pomáháte
-                dalším, my pomůžeme vám najít IT odborníka pro váši naději.
+                Pokud máte dobrý nápad, projekt nebo již reálně pomáháte dalším,
+                my pomůžeme vám najít IT odborníka pro vaši naději.
               </p>
               <h2 className="font-title text-grey text-4xl pt-4">
                 Kdo vám může pomoci
               </h2>
               <p className="font-body text-grey-dark text-base pb-3">
-                Níže najdete přehled IT odborníků, kteří se přidlali k projektu
+                Níže najdete přehled IT odborníků, kteří se přidali k projektu
                 Help to Hope.
               </p>
               <p className="font-body text-grey-dark text-base pb-3">
@@ -80,15 +80,15 @@ export default function Projects() {
                 možnost filtrování podle oblasti pomoci.
               </p>
               <p className="font-body text-grey-dark text-base pb-3">
-                Po kliknutí na Další informace se vám zobrazí všechny informace.
-                Pokud budete mít zájem o spolupráci, klikněte na Chci pomoct a
-                my vás propojíme.
+                Po kliknutí na tlačítko "Zobrazit další informace" se vám
+                zobrazí všechny informace. Pokud budete mít zájem o spolupráci,
+                klikněte na "Mám zájem o spolupráci" a my vás propojíme.
               </p>
               <h2 className="font-title text-grey text-4xl pt-4">
                 Další možnosti
               </h2>
               <p className="font-body text-grey-dark text-base pb-3">
-                Pokud v naši nabídce nenajdete správnou osobu, můžete přidat váš
+                Pokud v naší nabídce nenajdete správnou osobu, můžete přidat váš
                 projekt. Registrované projekty prochází IT odborníci. Odkaz na
                 registraci projektu najdete níže.
               </p>

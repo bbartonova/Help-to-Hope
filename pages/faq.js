@@ -20,7 +20,7 @@ export default function Faq() {
             Vůbec nic! Naším cílem je pomoci ke zviditelnění v online světě
             jednotlivcům, spolkům, organizacím, dobrovolníkům a všem těm, kteří
             nabízejí nezištně pomoc ostatním. Více se můžete dozvědět na stránce{' '}
-            <a href="https://www.helptohope.cz/new_project">
+            <a href="https://www.helptohope.cz/o_projektu">
               O projektu Help to Hope
             </a>
             .
