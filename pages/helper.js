@@ -7,6 +7,7 @@ import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import { listNewProjects } from '../src/graphql/queries';
 import { Select } from 'antd';
 
+const defaultFilterValue = 'všechny projekty';
 export default function Helper() {
   const [projects, setProjects] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -17,6 +18,7 @@ export default function Helper() {
 
       setCategories([
         ...new Set([
+          defaultFilterValue,
           ...response.data.listNewProjects.items.map(
             (project) => project.businessField,
           ),
@@ -28,7 +30,9 @@ export default function Helper() {
     API.graphql(
       graphqlOperation(listNewProjects, {
         filter: {
-          businessField: { contains: value },
+          businessField: {
+            contains: value === defaultFilterValue ? '' : value,
+          },
         },
       }),
     ).then((response) => {
@@ -98,6 +102,7 @@ export default function Helper() {
               className="py-8 font-body text-grey-dark w-96"
               onChange={onFilterChange}
               placeholder="Vyberte oblast:"
+              defaultValue={defaultFilterValue}
             >
               {categories.map((category) => (
                 <Select.Option value={category} key={category}>
