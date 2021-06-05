@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Layout from '../components/layout/Layout';
 
 export default function successSent() {
@@ -17,6 +18,13 @@ export default function successSent() {
             <h2 className="font-title text-grey text-4xl pt-4">
               Brzy vás budeme kontaktovat.
             </h2>
+            <p className="font-body text-grey-dark text-base my-6">
+              Pro více informací se můžete podívat na stránku s
+              <Link href="/faq">
+                <a> Často kladenými dotazy </a>
+              </Link>
+              .
+            </p>
           </div>
         </main>
       </Layout>

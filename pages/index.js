@@ -19,7 +19,7 @@ export default function Home() {
             align="left"
           />
           <Image
-            src="/img_HtH.png"
+            src="/ruka_srdce.png"
             alt="ruka"
             width={200}
             height={200}
