@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: (theme) => ({
-        'index-background': "url('/pozadi_hth.jpg')",
+        'index-background': "url('/pozadi_hth_n.jpg')",
         'projects-backround': "url('/pozadi_projects.jpg')",
         'success-backround': "url('/success.jpg')",
         'helper-backround': "url('/pozadi_helper.jpg')",
@@ -24,7 +24,7 @@ module.exports = {
         75: '75%',
       },
 
-      screens: { xsm: '400px' },
+      screens: { xsm: '500px' },
 
       minWidth: { '1/2': '50%' },
       maxWidth: { '1/2': '50%' },

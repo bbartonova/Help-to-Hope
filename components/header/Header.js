@@ -6,7 +6,7 @@ export default function Header(props) {
     <header className="bg-grey-dark flex justify-center px-8">
       {props.isLandingPage && (
         <Image
-          src="/HtH_logo_rev_sm.png"
+          src="/logo_hth.jpg"
           alt="logo"
           layout="intrinsic"
           width={230}
@@ -18,7 +18,7 @@ export default function Header(props) {
           <Link href="/" className="flex sm:flex justify-start">
             <a className="m-0">
               <Image
-                src="/HtH_logo_rev_sm.png"
+                src="/logo_hth.jpg"
                 alt="logo"
                 layout="intrinsic"
                 width={230}

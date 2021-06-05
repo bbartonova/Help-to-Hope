@@ -46,9 +46,9 @@ export default function Project(props) {
           Možná odměna: {props.reward}
         </p>
       </div>
-      <div>
+      <div className="flex flex-col sm:flex-row">
         <button
-          className="border-green border-solid border-2 rounded-md font-title text-grey-dark text-base  hover:bg-green hover:bg-opacity-100 hover:text-grey-light p-2 font-extralight mr-8"
+          className="border-green border-solid border-2 rounded-md font-title text-grey-dark text-base flex hover:bg-green hover:bg-opacity-100 p-2 font-extralight mr-8 w-max sm:w-auto"
           onClick={() => setIsVisible(!isVisible)}
         >
           {isVisible === true
@@ -57,7 +57,7 @@ export default function Project(props) {
         </button>
         <Link href={`/int_project/${props.id}`}>
           <a
-            className="border-green border-solid border-2 rounded-md font-title text-grey-dark text-base  hover:bg-green hover:bg-opacity-100 p-2 font-extralight"
+            className="border-green border-solid border-2 rounded-md font-title text-grey-dark text-base flex hover:bg-green hover:bg-opacity-100 p-2 font-extralight w-max sm:w-auto mt-4 sm:mt-0"
             onClick={() => setNameProjectLS(props.name)}
           >
             Chci pomoct projektu

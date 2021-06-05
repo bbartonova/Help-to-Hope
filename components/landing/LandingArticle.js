@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function LandingArticle(props) {
   return (
-    <article style={{ textAlign: props.align }} className="w-full p-8 md:w-1/3">
+    <article style={{ textAlign: props.align }} className="w-full p-8 sm:w-1/3">
       <h1 className="text-green font-title text-5xl font-extralight">
         {props.title}
       </h1>
