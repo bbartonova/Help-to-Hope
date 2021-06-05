@@ -33,9 +33,9 @@ export default function Helper(props) {
           Preferovaná oblast pomoci: {props.projectArea}
         </p>
       </div>
-      <div>
+      <div className="flex flex-col sm:flex-row">
         <button
-          className="border-green border-solid border-2 rounded-md font-title text-grey-dark text-base  hover:bg-green hover:bg-opacity-100 p-2 font-extralight mr-8"
+          className="border-green border-solid border-2 rounded-md font-title text-grey-dark text-base flex hover:bg-green hover:bg-opacity-100 p-2 font-extralight mr-8 w-max sm:w-auto"
           onClick={() => setIsVisible(!isVisible)}
         >
           {isVisible === true
@@ -44,7 +44,7 @@ export default function Helper(props) {
         </button>
         <Link href={`/int_helper/${props.id}`}>
           <a
-            className="border-green border-solid border-2 rounded-md font-title text-grey-dark text-base  hover:bg-green hover:bg-opacity-100 p-2 font-extralight"
+            className="border-green border-solid border-2 rounded-md font-title text-grey-dark text-base flex hover:bg-green hover:bg-opacity-100 p-2 font-extralight w-max sm:w-auto mt-4 sm:mt-0"
             onClick={() => setNameProjectLS(props.name + ' ' + props.lastname)}
           >
             Mám zájem o spolupráci

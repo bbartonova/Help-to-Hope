@@ -27,6 +27,7 @@ module.exports = {
       screens: { xsm: '400px' },
 
       minWidth: { '1/2': '50%' },
+      maxWidth: { '1/2': '50%' },
     },
   },
 

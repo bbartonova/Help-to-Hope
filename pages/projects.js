@@ -49,9 +49,9 @@ export default function Projects() {
       </Head>
       <Layout isLandingPage={false}>
         <main className="min-h-screen">
-          <div className="bg-projects-backround bg-cover flex justify-between">
-            <div className="w-1/2"></div>
-            <div className="w-1/2 flex justify-end flex-col text-right p-8">
+          <div className="bg-projects-backround bg-cover bg-left-top lg:bg-top xl:bg-left-top flex justify-between">
+            <div className="lg:w-1/2"></div>
+            <div className="flex justify-end flex-col text-center md:text-right p-8 bg-white bg-opacity-80 lg:bg-transparent lg:w-1/2">
               <h1 className="font-title text-green text-5xl">
                 Potřebuji pomoc
               </h1>
@@ -98,10 +98,10 @@ export default function Projects() {
             </div>
           </div>
           <div className="bg-grey flex flex-col justify-center items-center p-8">
-            <h2 className="font-title text-grey-light text-4xl pt-4">
+            <h2 className="font-title text-grey-light text-4xl pt-4 text-center">
               Seznam registrovaných IT odborníků
             </h2>
-            <div /*style={{ display: 'flex', justifyContent: 'center' }}*/>
+            <div>
               <Select
                 className="py-8 font-body text-grey-dark w-96"
                 onChange={onFilterChange}
@@ -131,7 +131,7 @@ export default function Projects() {
             ></Helper>
           ))}{' '}
           <div className="bg-grey flex flex-col justify-center items-center p-8">
-            <p className="font-body text-grey-light text-base pb-3">
+            <p className="font-body text-grey-light text-base pb-3 text-center">
               Pokud jste nenašli správnou osobu, přidejte váš projekt.
             </p>
             <Link href="/new_project">
