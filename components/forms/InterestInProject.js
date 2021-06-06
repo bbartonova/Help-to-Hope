@@ -9,23 +9,23 @@ export default function InterestInProject(props) {
   const { TextArea } = Input;
   const [componentSize, setComponentSize] = useState();
   const [isSent, setIsSent] = useState(false);
+  const [isSending, setIsSending] = useState(false);
   const router = useRouter();
   const [form] = Form.useForm();
   const onFormLayoutChange = ({ size }) => {
     setComponentSize(size);
   };
-  const onFinish = (values) => {
-    console.log('Success:', values);
-    axios
-      .post('/api/mailer', {
-        ...values,
-        projectId: props.id,
-        contactId: 'Zájem o projekt',
-        projectName: props.name,
-      })
-
-      .then((response) => console.log(response));
+  const onFinish = async (values) => {
+    setIsSending(true);
+    await axios.post('/api/mailer', {
+      ...values,
+      projectId: props.id,
+      contactId: 'Zájem o projekt',
+      projectName: props.name,
+    });
+    setIsSending(false);
     form.resetFields();
+    router.push('/successSent');
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -123,12 +123,9 @@ export default function InterestInProject(props) {
         <Form.Item name="submit" type="button">
           <Button
             className="bg-grey-light border-green-dark border-2 text-green-dark hover:bg-green hover:text-grey-light hover:border-green-dark hover:border-2"
-            type="primary"
+            type="default"
             htmlType="submit"
-            onClick={() => {
-              setIsSent(!isSent);
-              router.push('/successSent');
-            }}
+            loading={isSending}
           >
             {isSent === true ? `Odesláno` : `Odeslat`}
           </Button>

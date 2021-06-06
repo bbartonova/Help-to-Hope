@@ -10,6 +10,7 @@ export default function HelperOfProject() {
   const { TextArea } = Input;
   const [componentSize, setComponentSize] = useState();
   const [isSent, setIsSent] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const [form] = Form.useForm();
 
@@ -17,15 +18,18 @@ export default function HelperOfProject() {
     setComponentSize(size);
   };
   const onFinish = async (values) => {
-    console.log('Success:', values);
+    setIsLoading(true);
     try {
       await API.graphql(
         graphqlOperation(createHelperOfProject, { input: values }),
       );
     } catch (error) {
+      setIsLoading(false);
       console.log(error);
     }
+    setIsLoading(false);
     form.resetFields();
+    router.push('/successAdd');
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -157,10 +161,7 @@ export default function HelperOfProject() {
             className="bg-grey-light border-green-dark border-2 text-green-dark hover:bg-green hover:text-grey-light hover:border-green-dark hover:border-2"
             type="primary"
             htmlType="submit"
-            onClick={() => {
-              setIsSent(!isSent);
-              router.push('/successAdd');
-            }}
+            loading={isLoading}
           >
             {isSent === true ? `Zaregistrováno` : `Registrovat se`}
           </Button>
