@@ -8,6 +8,7 @@ export default function ContactForm() {
   const { TextArea } = Input;
   const [componentSize, setComponentSize] = useState();
   const [isSent, setIsSent] = useState(false);
+  const [isSending, setIsSending] = useState(false);
   const router = useRouter();
   const [form] = Form.useForm();
 
@@ -15,13 +16,14 @@ export default function ContactForm() {
     setComponentSize(size);
   };
   const onFinish = async (values) => {
-    console.log('Success:', values);
+    setIsSending(true);
     await axios.post('/api/mailer', {
       ...values,
       contactId: 'Kontaktní formulář',
     });
-
+    setIsSending(false);
     form.resetFields();
+    router.push('/successSent');
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -101,10 +103,7 @@ export default function ContactForm() {
             className="bg-grey-light border-green-dark border-2 text-green-dark hover:bg-green hover:text-grey-light hover:border-green-dark hover:border-2"
             type="default"
             htmlType="submit"
-            onClick={() => {
-              setIsSent(!isSent);
-              router.push('/successSent');
-            }}
+            loading={isSending}
           >
             {isSent === true ? `Odesláno` : `Odeslat`}
           </Button>
