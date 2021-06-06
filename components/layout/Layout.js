@@ -7,7 +7,7 @@ export default function Layout(props) {
     <div
       className={`${
         props.isLandingPage &&
-        'bg-gradient-to-r from-grey-dark to-grey xsm:bg-index-background md:bg-top sm:bg-cover sm:bg-no-repeat sm:flex sm:flex-col sm:justify-between h-full md:h-screen'
+        'bg-gradient-to-r from-grey-dark to-grey xsm:bg-index-background md:bg-top sm:bg-cover sm:bg-no-repeat sm:flex sm:flex-col sm:justify-between sm:h-full'
       }`}
     >
       <Header isLandingPage={props.isLandingPage} />
