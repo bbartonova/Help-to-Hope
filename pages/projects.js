@@ -6,7 +6,7 @@ import Helper from '../components/helper/Helper';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import { listHelperOfProjects } from '../src/graphql/queries';
 import { Select } from 'antd';
-
+const defaultFilterValue = 'všichni odborníci';
 export default function Projects() {
   const [helpers, setHelpers] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -18,6 +18,7 @@ export default function Projects() {
 
       setCategories([
         ...new Set([
+          defaultFilterValue,
           ...response.data.listHelperOfProjects.items.map(
             (project) => project.businessField,
           ),
@@ -30,7 +31,9 @@ export default function Projects() {
     API.graphql(
       graphqlOperation(listHelperOfProjects, {
         filter: {
-          businessField: { contains: value },
+          businessField: {
+            contains: value === defaultFilterValue ? '' : value,
+          },
         },
       }),
     ).then((response) => {
@@ -46,9 +49,9 @@ export default function Projects() {
       </Head>
       <Layout isLandingPage={false}>
         <main className="min-h-screen">
-          <div className="bg-projects-backround bg-cover flex justify-between">
-            <div className="w-1/2"></div>
-            <div className="w-1/2 flex justify-end flex-col text-right p-8">
+          <div className="bg-projects-backround bg-cover bg-left-top lg:bg-top xl:bg-left-top flex justify-between">
+            <div className="lg:w-1/2"></div>
+            <div className="flex justify-end flex-col text-center md:text-right p-8 bg-white bg-opacity-80 lg:bg-transparent lg:w-1/2">
               <h1 className="font-title text-green text-5xl">
                 Potřebuji pomoc
               </h1>
@@ -57,22 +60,22 @@ export default function Projects() {
               </h2>
               <p className="font-body text-grey-dark text-base pb-3">
                 Projekt Help to Hope má pomáhat jednotlivcům, skupinám,
-                dobrovolníkům, všem těm, kteří pomáhají nezištně ostatním a
-                potřebují být více nebo lépe vidět v online světě.
+                dobrovolníkům, všem těm, kdo pomáhají bezištně ostatním a
+                potřebují být více, nebo lépe vidět v online světě.
               </p>
               <p className="font-body text-grey-dark text-base pb-3">
                 Být lépe vidět znamená přinést naději více lidem. Chceme dělat
                 naději dostupnější.
               </p>
               <p className="font-body text-grey-dark text-base pb-3">
-                Pokud máte dobrý nápad, projekt nebo již reálně pomáháte dalším,
-                my pomůžeme vám najít IT odborníka pro vaši naději.
+                Pokud máte dobrý nápad, projekt, nebo již reálně pomáháte
+                dalším, my pomůžeme vám najít IT odborníka pro váši naději.
               </p>
               <h2 className="font-title text-grey text-4xl pt-4">
                 Kdo vám může pomoci
               </h2>
               <p className="font-body text-grey-dark text-base pb-3">
-                Níže najdete přehled IT odborníků, kteří se přidali k projektu
+                Níže najdete přehled IT odborníků, kteří se přidlali k projektu
                 Help to Hope.
               </p>
               <p className="font-body text-grey-dark text-base pb-3">
@@ -80,29 +83,30 @@ export default function Projects() {
                 možnost filtrování podle oblasti pomoci.
               </p>
               <p className="font-body text-grey-dark text-base pb-3">
-                Po kliknutí na tlačítko "Zobrazit další informace" se vám
-                zobrazí všechny informace. Pokud budete mít zájem o spolupráci,
-                klikněte na "Mám zájem o spolupráci" a my vás propojíme.
+                Po kliknutí na Další informace se vám zobrazí všechny informace.
+                Pokud budete mít zájem o spolupráci, klikněte na Chci pomoct a
+                my vás propojíme.
               </p>
               <h2 className="font-title text-grey text-4xl pt-4">
                 Další možnosti
               </h2>
               <p className="font-body text-grey-dark text-base pb-3">
-                Pokud v naší nabídce nenajdete správnou osobu, můžete přidat váš
+                Pokud v naši nabídce nenajdete správnou osobu, můžete přidat váš
                 projekt. Registrované projekty prochází IT odborníci. Odkaz na
                 registraci projektu najdete níže.
               </p>
             </div>
           </div>
           <div className="bg-grey flex flex-col justify-center items-center p-8">
-            <h2 className="font-title text-grey-light text-4xl pt-4">
+            <h2 className="font-title text-grey-light text-4xl pt-4 text-center">
               Seznam registrovaných IT odborníků
             </h2>
-            <div /*style={{ display: 'flex', justifyContent: 'center' }}*/>
+            <div>
               <Select
                 className="py-8 font-body text-grey-dark w-96"
                 onChange={onFilterChange}
                 placeholder="Vyberte oblast:"
+                defaultValue={defaultFilterValue}
               >
                 {categories.map((category) => (
                   <Select.Option value={category} key={category}>
@@ -125,10 +129,9 @@ export default function Projects() {
               timeAvailability={helper.timeAvailability}
               projectArea={helper.projectArea}
             ></Helper>
-          ))}
-
+          ))}{' '}
           <div className="bg-grey flex flex-col justify-center items-center p-8">
-            <p className="font-body text-grey-light text-base pb-3">
+            <p className="font-body text-grey-light text-base pb-3 text-center">
               Pokud jste nenašli správnou osobu, přidejte váš projekt.
             </p>
             <Link href="/new_project">

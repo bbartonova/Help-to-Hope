@@ -7,6 +7,7 @@ import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import { listNewProjects } from '../src/graphql/queries';
 import { Select } from 'antd';
 
+const defaultFilterValue = 'všechny projekty';
 export default function Helper() {
   const [projects, setProjects] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -17,6 +18,7 @@ export default function Helper() {
 
       setCategories([
         ...new Set([
+          defaultFilterValue,
           ...response.data.listNewProjects.items.map(
             (project) => project.businessField,
           ),
@@ -28,7 +30,9 @@ export default function Helper() {
     API.graphql(
       graphqlOperation(listNewProjects, {
         filter: {
-          businessField: { contains: value },
+          businessField: {
+            contains: value === defaultFilterValue ? '' : value,
+          },
         },
       }),
     ).then((response) => {
@@ -44,8 +48,8 @@ export default function Helper() {
       </Head>
       <Layout isLandingPage={false}>
         <main className="min-h-screen">
-          <div className="bg-helper-backround bg-cover flex justify-between">
-            <div className="w-1/2 flex justify-end flex-col text-left p-8">
+          <div className="bg-helper-backround bg-cover bg-right-top lg:bg-top xl:bg-right-top flex justify-between">
+            <div className="flex justify-end flex-col text-center md:text-left p-8 bg-white bg-opacity-80 lg:bg-transparent lg:w-1/2">
               <h1 className="font-title text-green text-5xl">Chci pomáhat</h1>
               <h2 className="font-title text-grey text-4xl pt-4">
                 Kdo může pomáhat
@@ -88,16 +92,17 @@ export default function Helper() {
                 prochází zájemci s projekty. Odkaz na registraci najdete níže.
               </p>
             </div>
-            <div className="w-1/2"></div>
+            <div className="lg:w-1/2"></div>
           </div>
           <div className="bg-grey flex flex-col justify-center items-center p-8">
-            <h2 className="font-title text-grey-light text-4xl pt-4">
+            <h2 className="font-title text-grey-light text-4xl pt-4 text-center">
               Seznam registrovaných projektů
             </h2>
             <Select
               className="py-8 font-body text-grey-dark w-96"
               onChange={onFilterChange}
               placeholder="Vyberte oblast:"
+              defaultValue={defaultFilterValue}
             >
               {categories.map((category) => (
                 <Select.Option value={category} key={category}>
@@ -125,7 +130,7 @@ export default function Helper() {
             ></Project>
           ))}
           <div className="bg-grey flex flex-col justify-center items-center p-8">
-            <p className="font-body text-grey-light text-base pb-3">
+            <p className="font-body text-grey-light text-base pb-3 text-center">
               Pokud jste nenašli správný projekt a chcete pomáhat, zaregistrujte
               se.
             </p>
