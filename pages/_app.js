@@ -19,6 +19,10 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="google-site-verification"
+          content="wcfGXfXKWGUbuvLJjA-NvRsvJZLuFzJE8tb8SaKROM0"
+        />
         <link rel="icon" href="/favi.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
